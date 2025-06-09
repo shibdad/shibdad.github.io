@@ -1311,7 +1311,6 @@ body {
     height: 100%;
 }
 
-/* Hide fallback when photo is loaded */
 .hero-image-content:has(.hero-photo) .hero-fallback {
     display: none;
 }
@@ -1367,7 +1366,6 @@ body {
     color: #10b981;
 }
 
-/* Tech Stack Marquee */
 .tech-marquee {
     position: relative;
     overflow: hidden;
