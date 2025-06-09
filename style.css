@@ -1230,7 +1230,7 @@ body {
 .hero-image-container {
     position: relative;
     display: inline-block;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
 }
 
 .hero-image-shadow {
@@ -1289,12 +1289,10 @@ body {
 }
 
 .hero-title {
-    position: absolute;
-    bottom: -2rem;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
     width: 100%;
     z-index: 20;
+    margin-top: 2rem;
 }
 
 .hero-title h1 {
