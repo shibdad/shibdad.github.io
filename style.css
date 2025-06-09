@@ -1211,7 +1211,7 @@ body {
     text-align: center;
     position: relative;
     z-index: 10;
-    padding-top: 6rem;
+    padding-top: 2rem;
 }
 
 .hero-badge {
@@ -1225,11 +1225,9 @@ body {
     font-weight: 500;
     color: #047857;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 50;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 30;
 }
 
 .hero-image-container {
