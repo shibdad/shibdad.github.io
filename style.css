@@ -1230,12 +1230,6 @@ body {
     z-index: 30;
 }
 
-.hero-image-container {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 6rem;
-}
-
 .hero-image-shadow {
     position: absolute;
     inset: 0;
@@ -1292,10 +1286,12 @@ body {
 }
 
 .hero-title {
-    position: relative;
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
     z-index: 20;
-    margin-top: 2rem;
 }
 
 .hero-photo {
