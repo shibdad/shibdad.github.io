@@ -1211,6 +1211,7 @@ body {
     text-align: center;
     position: relative;
     z-index: 10;
+    padding-top: 4rem;
 }
 
 .hero-badge {
@@ -1223,7 +1224,7 @@ body {
     font-size: 0.875rem;
     font-weight: 500;
     color: #047857;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 30;
