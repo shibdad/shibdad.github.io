@@ -1223,8 +1223,10 @@ body {
     font-size: 0.875rem;
     font-weight: 500;
     color: #047857;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 30;
 }
 
 .hero-image-container {
@@ -1311,6 +1313,7 @@ body {
     height: 100%;
 }
 
+/* Hide fallback when photo is loaded */
 .hero-image-content:has(.hero-photo) .hero-fallback {
     display: none;
 }
@@ -1366,6 +1369,7 @@ body {
     color: #10b981;
 }
 
+/* Tech Stack Marquee */
 .tech-marquee {
     position: relative;
     overflow: hidden;
