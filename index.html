@@ -3,410 +3,321 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trey Brown - Data Scientist & Developer</title>
+    <title>Trey Brown — Clinical Data Scientist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.js"></script>
 </head>
 <body>
-    <div class="portfolio-container">
-        <!-- Background Elements -->
-        <div class="fixed-background">
-            <div class="bg-blob bg-blob-1"></div>
-            <div class="bg-blob bg-blob-2"></div>
-            <div class="bg-blob bg-blob-3"></div>
-            <div class="bg-shape bg-shape-1"></div>
-            <div class="bg-shape bg-shape-2"></div>
-            <div class="bg-shape bg-shape-3"></div>
-        </div>
 
-        <!-- Navigation -->
-        <nav class="navigation">
-            <div class="nav-container">
-                <div class="nav-links">
-                    <a href="#home" class="nav-link">HOME</a>
-                    <a href="#expertise" class="nav-link">EXPERTISE</a>
-                    <a href="#web-development" class="nav-link">WEB DEVELOPMENT</a>
-                    <a href="#contact" class="nav-link">CONTACT</a>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="hero-bg-gradient"></div>
-            
-            <div class="hero-container">
-                <div class="hero-badge fade-in">
-                    HELLO! I AM TREY BROWN AKA SHIBDAD
-                </div>
-                
-                <div class="hero-image-container fade-in" style="animation-delay: 0.2s;">
-                    <div class="hero-image-shadow"></div>
-                    <div class="hero-image">
-                        <div class="hero-image-content">
-                            <img src="photo.png" alt="Trey Brown - Data Scientist & Developer" class="hero-photo" />
-                            <div class="hero-fallback">
-                                <div class="hero-avatar">
-                                    <span class="hero-emoji">👨‍💻</span>
-                                </div>
-                                <p class="hero-photo-text">Your Professional Photo</p>
-                                <p class="hero-photo-subtext">Portrait Style</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="hero-title">
-                        <h1>
-                            Data scientist<br />
-                            <span class="hero-title-accent">& developer</span>
-                        </h1>
-                    </div>
-                </div>
-                
-                <div class="hero-actions fade-in" style="animation-delay: 0.4s;">
-                    <button class="btn-primary">
-                        <i data-lucide="download"></i>
-                        DOWNLOAD RESUME
-                    </button>
-                    <a href="https://github.com/shibdad" target="_blank" class="btn-secondary">GITHUB</a>
-                    <a href="#" class="btn-secondary">LINKEDIN</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tech Stack Marquee -->
-        <div class="tech-marquee fade-in" style="animation-delay: 0.6s;">
-            <div class="marquee-gradient marquee-gradient-left"></div>
-            <div class="marquee-gradient marquee-gradient-right"></div>
-            <div class="marquee-content">
-                <div class="marquee-track">
-                    <span class="marquee-item">PYTHON</span>
-                    <span class="marquee-item">PANDAS</span>
-                    <span class="marquee-item">SCIKIT-LEARN</span>
-                    <span class="marquee-item">TENSORFLOW</span>
-                    <span class="marquee-item">PYTORCH</span>
-                    <span class="marquee-item">REACT</span>
-                    <span class="marquee-item">TABLEAU</span>
-                    <span class="marquee-item">AZURE</span>
-                    <span class="marquee-item">DOCKER</span>
-                    <span class="marquee-item">SQL</span>
-                    <span class="marquee-item">MONGODB</span>
-                    <span class="marquee-item">KUBERNETES</span>
-                    <span class="marquee-item">JUPYTER</span>
-                    <span class="marquee-item">GIT</span>
-                    <span class="marquee-item">PLOTLY</span>
-                    <!-- Repeated for seamless loop -->
-                    <span class="marquee-item">PYTHON</span>
-                    <span class="marquee-item">PANDAS</span>
-                    <span class="marquee-item">SCIKIT-LEARN</span>
-                    <span class="marquee-item">TENSORFLOW</span>
-                    <span class="marquee-item">PYTORCH</span>
-                    <span class="marquee-item">REACT</span>
-                    <span class="marquee-item">TABLEAU</span>
-                    <span class="marquee-item">AZURE</span>
-                    <span class="marquee-item">DOCKER</span>
-                    <span class="marquee-item">SQL</span>
-                    <span class="marquee-item">MONGODB</span>
-                    <span class="marquee-item">KUBERNETES</span>
-                    <span class="marquee-item">JUPYTER</span>
-                    <span class="marquee-item">GIT</span>
-                    <span class="marquee-item">PLOTLY</span>
-                </div>
+    <!-- NAV -->
+    <nav class="navigation" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-brand">TB</a>
+            <div class="nav-links">
+                <a href="#work" class="nav-link">Work</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
         </div>
+    </nav>
 
-        <!-- Experience Section -->
-        <section id="expertise" class="experience-section">
-            <div class="experience-container">
-                <div class="experience-content">
-                    <div class="experience-left">
-                        <div class="section-badge fade-in">
-                            CORE EXPERIENCE
-                        </div>
-                        
-                        <h2 class="section-title fade-in" style="animation-delay: 0.2s;">
-                            It all starts with<br />
-                            <span class="section-title-accent">curiosity</span>
-                        </h2>
-                        
-                        <p class="section-description fade-in" style="animation-delay: 0.4s;">
-                            Through machine learning, we transform complex datasets into intelligent models 
-                            that can predict what was once only imagined. Combined with elegant visualizations 
-                            and scientific rigor, curiosity becomes real-world impact.
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="hero-glow g1"></div>
+            <div class="hero-glow g2"></div>
+            <div class="grid-overlay"></div>
+        </div>
+        <div class="hero-content fade-in">
+            <div class="hero-eyebrow">Clinical Data Scientist · Houston, TX</div>
+            <h1 class="hero-name">Trey<br><span class="hero-name-light">Brown</span></h1>
+            <p class="hero-sub">
+                I build and deploy machine learning models directly into clinical workflows —
+                turning patient data into decisions that clinicians can act on.
+            </p>
+            <div class="hero-cta-row">
+                <a href="mailto:brown.treyk@gmail.com" class="btn-primary">Get in Touch</a>
+                <a href="https://github.com/shibdad" target="_blank" class="btn-ghost">GitHub ↗</a>
+                <a href="https://www.linkedin.com/in/trey-b-372894144/" target="_blank" class="btn-ghost">LinkedIn ↗</a>
+            </div>
+        </div>
+        <div class="hero-photo-wrap fade-in" style="animation-delay:0.2s">
+            <div class="hero-photo-ring"></div>
+            <img src="photo.png" alt="Trey Brown" class="hero-photo" />
+        </div>
+    </section>
+
+
+
+</body>
+</html>
+
+    <!-- FEATURED WORK -->
+    <section id="work" class="section">
+        <div class="container">
+            <div class="section-label fade-in">Featured Work</div>
+            <h2 class="section-title fade-in">Production ML<br>in Clinical Settings</h2>
+
+            <!-- FEATURED: XGM Project -->
+            <div class="featured-card fade-in">
+                <div class="featured-badge">★ Presented at Epic XGM 2026</div>
+                <div class="featured-inner">
+                    <div class="featured-text">
+                        <div class="project-tag">Healthcare ML · XGBoost · SHAP · Epic Cosmos</div>
+                        <h3 class="project-title">HIV Risk Prediction Model</h3>
+                        <p class="project-desc">
+                            Built and deployed an XGBoost model trained on Epic Cosmos data to proactively identify
+                            patients at elevated HIV risk — enabling clinical outreach before symptoms appear.
+                            Jefferson Health was the <strong>first organization in the Epic ecosystem</strong> to
+                            translate a Cosmos research model through Slate development into a live Nebula
+                            production deployment with an operational OPA.
                         </p>
+                        <div class="stat-row">
+                            <div class="stat"><div class="stat-num">0.805</div><div class="stat-lbl">AUC (org-wide validation)</div></div>
+                            <div class="stat"><div class="stat-num">114K+</div><div class="stat-lbl">Patients scored</div></div>
+                            <div class="stat"><div class="stat-num">~1,789</div><div class="stat-lbl">High-risk patients flagged</div></div>
+                        </div>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Fairness-aware design</span>
+                                <span class="detail-val">Deliberately removed race and SVI features to prevent disproportionate flagging, accepting a 0.053 AUC trade-off for ethical deployment</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">SHAP in production</span>
+                                <span class="detail-val">TreeExplainer integrated into Epic PMA — clinicians see per-patient feature contributions directly in Hyperspace</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Deployment pipeline</span>
+                                <span class="detail-val">Cosmos → Slate Docker container → Nebula production, solving version conflicts across scikit-learn, XGBoost, and pickle serialization</span>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="experience-right">
-                        <div class="experience-timeline">
-                            <div class="experience-item fade-in" style="animation-delay: 0.5s;">
-                                <div class="experience-company current">THOMAS JEFFERSON</div>
-                                <div class="experience-role">Data Scientist</div>
-                                <div class="experience-period">(PRESENT)</div>
+                    <div class="featured-visual">
+                        <div class="pipeline-viz">
+                            <div class="pipe-step active">
+                                <div class="pipe-icon">🌐</div>
+                                <div class="pipe-name">Cosmos</div>
+                                <div class="pipe-sub">Research data</div>
                             </div>
-                            <div class="experience-item fade-in" style="animation-delay: 0.65s;">
-                                <div class="experience-company">LEHIGH VALLEY HEALTH NETWORK</div>
-                                <div class="experience-role">Senior Software Developer</div>
-                                <div class="experience-period">2023 - 2025</div>
+                            <div class="pipe-arrow">→</div>
+                            <div class="pipe-step">
+                                <div class="pipe-icon">🐳</div>
+                                <div class="pipe-name">Slate</div>
+                                <div class="pipe-sub">Docker dev</div>
                             </div>
-                            <div class="experience-item fade-in" style="animation-delay: 0.8s;">
-                                <div class="experience-company">UNIVERSITY HEALTH SYSTEM</div>
-                                <div class="experience-role">SER Admin</div>
-                                <div class="experience-period">2022 - 2023</div>
+                            <div class="pipe-arrow">→</div>
+                            <div class="pipe-step">
+                                <div class="pipe-icon">🚀</div>
+                                <div class="pipe-name">Nebula</div>
+                                <div class="pipe-sub">Production</div>
                             </div>
-                            <div class="experience-item fade-in" style="animation-delay: 0.95s;">
-                                <div class="experience-company">FREELANCE</div>
-                                <div class="experience-role">Web Developer</div>
-                                <div class="experience-period">2020 - PRESENT</div>
-                            </div>
+                        </div>
+                        <div class="model-card-mini">
+                            <div class="mc-row"><span>AUC</span><span class="mc-val green">0.805</span></div>
+                            <div class="mc-row"><span>Sensitivity</span><span class="mc-val">25.9%</span></div>
+                            <div class="mc-row"><span>Specificity</span><span class="mc-val">96.0%</span></div>
+                            <div class="mc-row"><span>PPV</span><span class="mc-val">48.3%</span></div>
+                            <div class="mc-note">Threshold 20 · Deployment context</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- ML Capabilities Section -->
-        <section class="ml-section">
-            <div class="ml-container">
-                <div class="section-header">
-                    <div class="section-badge ml-badge fade-in">
-                        ADVANCED ML CAPABILITIES
-                    </div>
-                    
-                    <h2 class="section-title-large fade-in" style="animation-delay: 0.2s;">
-                        Cutting-edge <span class="section-title-accent">ML Solutions</span>
-                    </h2>
-                    
-                    <p class="section-description-large fade-in" style="animation-delay: 0.4s;">
-                        From fine-tuning large language models to building production-ready systems, 
-                        I specialize in implementing state-of-the-art ML techniques that deliver real business value.
+
+            <!-- OTHER PROJECTS GRID -->
+            <div class="projects-grid">
+
+                <div class="project-card fade-in">
+                    <div class="project-card-tag">NLP · LLM · Epic PMA</div>
+                    <h4 class="project-card-title">Valvular Disease NLP Pipeline</h4>
+                    <p class="project-card-desc">
+                        Production GPT-4o inference pipeline that classifies echocardiogram impressions into
+                        multi-class valvular severity labels (none / trace-mild / moderate / severe) when
+                        structured documentation is absent. Migrated from Epic PMA to Microsoft Fabric using
+                        Azure OpenAI and Spark SQL for scale beyond the 15-minute RWB timeout limit.
                     </p>
-                </div>
-
-                <div class="ml-cards">
-                    <div class="ml-card blue-card fade-in" style="animation-delay: 0.2s;">
-                        <div class="ml-card-bg"></div>
-                        <div class="ml-card-content">
-                            <div class="ml-card-icon blue-icon">
-                                <span>🧠</span>
-                            </div>
-                            <h3 class="ml-card-title">Fine-Tuning</h3>
-                            <p class="ml-card-description">
-                                Custom model adaptation using LoRA, QLoRA, and full fine-tuning techniques for domain-specific tasks.
-                            </p>
-                            <div class="ml-card-tags">
-                                <span class="ml-tag blue-tag">Hugging Face</span>
-                                <span class="ml-tag blue-tag">PyTorch</span>
-                                <span class="ml-tag blue-tag">Transformers</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ml-card emerald-card fade-in" style="animation-delay: 0.3s;">
-                        <div class="ml-card-bg"></div>
-                        <div class="ml-card-content">
-                            <div class="ml-card-icon emerald-icon">
-                                <span>📊</span>
-                            </div>
-                            <h3 class="ml-card-title">Big Data</h3>
-                            <p class="ml-card-description">
-                                Scalable data processing and analytics solutions for massive datasets using distributed computing frameworks.
-                            </p>
-                            <div class="ml-card-tags">
-                                <span class="ml-tag emerald-tag">Spark</span>
-                                <span class="ml-tag emerald-tag">Hadoop</span>
-                                <span class="ml-tag emerald-tag">Snowflake</span>
-                                <span class="ml-tag emerald-tag">Databricks</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ml-card orange-card fade-in" style="animation-delay: 0.4s;">
-                        <div class="ml-card-bg"></div>
-                        <div class="ml-card-content">
-                            <div class="ml-card-icon orange-icon">
-                                <span>🚀</span>
-                            </div>
-                            <h3 class="ml-card-title">Model Deployment</h3>
-                            <p class="ml-card-description">
-                                Production-ready ML systems for enterprise deployment in Epic healthcare frameworks and cloud environments.
-                            </p>
-                            <div class="ml-card-tags">
-                                <span class="ml-tag orange-tag">Epic</span>
-                                <span class="ml-tag orange-tag">Cosmos</span>
-                                <span class="ml-tag orange-tag">CCMF</span>
-                                <span class="ml-tag orange-tag">Docker</span>
-                                <span class="ml-tag orange-tag">Kubernetes</span>
-                            </div>
-                        </div>
+                    <div class="project-card-chips">
+                        <span>GPT-4o</span><span>Azure OpenAI</span><span>Microsoft Fabric</span><span>Spark SQL</span>
                     </div>
                 </div>
 
-                <div class="ml-cta fade-in" style="animation-delay: 0.6s;">
-                    <h3 class="ml-cta-title">
-                        Maybe you just need help with<br />
-                        <span class="section-title-accent">database design</span>, analyzing data,<br />
-                        or general <span class="section-title-accent">data solutions</span>
-                    </h3>
-                    
-                    <p class="ml-cta-description">
-                        I can help with that too.
+                <div class="project-card fade-in" style="animation-delay:0.1s">
+                    <div class="project-card-tag research-tag">NLP · Transformers · Research</div>
+                    <h4 class="project-card-title">Brain Edema Detection <span class="research-badge">In Research</span></h4>
+                    <p class="project-card-desc">
+                        Exploring lightweight transformer alternatives (&lt;5GB, CPU-only) to replace high-cost
+                        LLM inference for brain edema classification from radiology impressions — targeting
+                        Epic Nebula deployment constraints. Current approach uses GPT-4o via Epic's AI Services
+                        framework; evaluating fine-tuned DistilBERT and model distillation strategies.
+                        Labeled 82K reports for training data.
                     </p>
-                    
-                    <button class="btn-cta">
-                        Hit Me Up
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Web Development Section -->
-        <section id="web-development" class="web-dev-section">
-            <div class="web-dev-bg">
-                <div class="web-dev-blob web-dev-blob-1"></div>
-                <div class="web-dev-blob web-dev-blob-2"></div>
-                <div class="web-dev-blob web-dev-blob-3"></div>
-            </div>
-
-            <div class="web-dev-gradient-top"></div>
-            <div class="web-dev-gradient-bottom"></div>
-
-            <div class="web-dev-container">
-                <div class="web-dev-header">
-                    <div class="section-badge web-dev-badge fade-in">
-                        ✨ ADVANCED WEB DEVELOPMENT SHOWCASE
+                    <div class="project-card-chips">
+                        <span>DistilBERT</span><span>Hugging Face</span><span>PyTorch</span><span>GPT-4o</span><span>Epic PMA</span>
                     </div>
-                    
-                    <h2 class="web-dev-title fade-in" style="animation-delay: 0.2s;">
-                        Websites that<br />
-                        <span class="web-dev-title-accent">mesmerize</span>
-                    </h2>
-                    
-                    <p class="web-dev-description fade-in" style="animation-delay: 0.4s;">
-                        I craft digital experiences that don't just look incredible—they perform flawlessly, 
-                        convert visitors into customers, and leave lasting impressions.
+                </div>
+
+                <div class="project-card fade-in" style="animation-delay:0.2s">
+                    <div class="project-card-tag">LLM · Clinical NLP · Epic Workflow API</div>
+                    <h4 class="project-card-title">Clinical Note Summarizer</h4>
+                    <p class="project-card-desc">
+                        GPT-4o-powered Epic Workflow API model that summarizes clinical notes on demand,
+                        surfacing output directly in the patient list via a StoreStructuredText print group
+                        in Hyperspace. Built using Epic's native cognitive inference framework
+                        (epic.io.workflow_integrations) extracted from Slate Docker.
                     </p>
-
-                    <div class="web-dev-tech-badges fade-in" style="animation-delay: 0.5s;">
-                        <span class="tech-badge">React</span>
-                        <span class="tech-badge">Next.js</span>
-                        <span class="tech-badge">TypeScript</span>
-                        <span class="tech-badge">Tailwind</span>
-                        <span class="tech-badge">Three.js</span>
+                    <div class="project-card-chips">
+                        <span>GPT-4o</span><span>Epic Workflow API</span><span>Python</span><span>Parcel</span>
                     </div>
                 </div>
 
-                <!-- Parallax Hero -->
-                <div class="parallax-hero fade-in" style="animation-delay: 0.6s;">
-                    <div class="parallax-bg"></div>
-                    
-                    <div class="parallax-elements">
-                        <div class="floating-shape shape-1"></div>
-                        <div class="floating-shape shape-2"></div>
-                        <div class="floating-shape shape-3"></div>
-                        <div class="floating-shape shape-4"></div>
-                        
-                        <div class="floating-dots">
-                            <div class="floating-dot" style="top: 25%; left: 15%; animation-delay: 0s;"></div>
-                            <div class="floating-dot" style="top: 40%; left: 80%; animation-delay: 1s;"></div>
-                            <div class="floating-dot" style="top: 60%; left: 20%; animation-delay: 2s;"></div>
-                            <div class="floating-dot" style="top: 30%; left: 70%; animation-delay: 0.5s;"></div>
-                            <div class="floating-dot" style="top: 70%; left: 60%; animation-delay: 1.5s;"></div>
-                            <div class="floating-dot" style="top: 20%; left: 45%; animation-delay: 2.5s;"></div>
-                        </div>
-                    </div>
-
-                    <div class="parallax-content">
-                        <div class="parallax-icon">⚡</div>
-                        <h4 class="parallax-title">Interactive Excellence</h4>
-                        <p class="parallax-text">
-                            From smooth animations to complex user interactions, 
-                            every detail is crafted for maximum impact
-                        </p>
-                        <div class="parallax-tags">
-                            <span class="parallax-tag" style="animation-delay: 0s;">React</span>
-                            <span class="parallax-tag" style="animation-delay: 0.2s;">Three.js</span>
-                            <span class="parallax-tag" style="animation-delay: 0.4s;">GSAP</span>
-                            <span class="parallax-tag" style="animation-delay: 0.6s;">Framer Motion</span>
-                            <span class="parallax-tag" style="animation-delay: 0.8s;">CSS3</span>
-                        </div>
-                    </div>
-
-                    <div class="parallax-grid"></div>
-                </div>
-
-                <!-- Web Dev Feature Cards -->
-                <div class="web-dev-cards">
-                    <div class="web-dev-card emerald-web-card fade-in" style="animation-delay: 0.2s;">
-                        <div class="web-dev-card-icon">
-                            <span>🎨</span>
-                        </div>
-                        <h3 class="web-dev-card-title">Modern CSS Mastery</h3>
-                        <p class="web-dev-card-description">
-                            Scroll-driven animations, CSS @property declarations, container queries, and advanced clip-path effects.
-                        </p>
-                    </div>
-
-                    <div class="web-dev-card blue-web-card fade-in" style="animation-delay: 0.3s;">
-                        <div class="web-dev-card-icon">
-                            <span>⚡</span>
-                        </div>
-                        <h3 class="web-dev-card-title">Canvas & Physics</h3>
-                        <p class="web-dev-card-description">
-                            GPU-accelerated particle systems, realistic physics simulations, and high-performance graphics.
-                        </p>
-                    </div>
-
-                    <div class="web-dev-card purple-web-card fade-in" style="animation-delay: 0.4s;">
-                        <div class="web-dev-card-icon">
-                            <span>📊</span>
-                        </div>
-                        <h3 class="web-dev-card-title">Interactive Data Viz</h3>
-                        <p class="web-dev-card-description">
-                            Real-time SVG animations, data binding, and scroll-triggered storytelling.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="web-dev-cta">
-                    <button class="btn-web-cta fade-in" style="animation-delay: 0.5s;">
-                        Start Your Project
-                        <i data-lucide="arrow-up-right"></i>
-                    </button>
-                    
-                    <p class="web-dev-cta-text fade-in" style="animation-delay: 0.6s;">
-                        Free consultation • Quick turnaround • Satisfaction guaranteed
-                    </p>
-                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="footer-content">
-                    <div class="footer-copyright">
-                        © 2024 Data Science Portfolio
+
+    <!-- SKILLS -->
+    <section id="skills" class="section section-dark">
+        <div class="container">
+            <div class="section-label fade-in">Technical Range</div>
+            <h2 class="section-title fade-in">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-group fade-in">
+                    <div class="skill-group-title">ML & Modeling</div>
+                    <div class="skill-chips">
+                        <span>XGBoost</span><span>scikit-learn</span><span>PyTorch</span>
+                        <span>DistilBERT / ClinicalBERT</span><span>SHAP</span>
+                        <span>Cross-validation</span><span>Class imbalance</span><span>Fairlearn</span>
                     </div>
-                    
-                    <div class="footer-social">
-                        <a href="https://github.com/shibdad" target="_blank" class="social-btn github-btn">
-                            <i data-lucide="github"></i>
-                        </a>
-                        <button class="social-btn linkedin-btn">
-                            <i data-lucide="linkedin"></i>
-                        </button>
-                        <button class="social-btn mail-btn">
-                            <i data-lucide="mail"></i>
-                        </button>
+                </div>
+                <div class="skill-group fade-in" style="animation-delay:0.1s">
+                    <div class="skill-group-title">NLP & LLMs</div>
+                    <div class="skill-chips">
+                        <span>GPT-4o / Azure OpenAI</span><span>Hugging Face Transformers</span>
+                        <span>Fine-tuning</span><span>Prompt engineering</span>
+                        <span>Clinical text classification</span>
                     </div>
-                    
-                    <div class="footer-location">
-                        🇺🇸 Made in Houston
+                </div>
+                <div class="skill-group fade-in" style="animation-delay:0.15s">
+                    <div class="skill-group-title">Epic Ecosystem</div>
+                    <div class="skill-chips">
+                        <span>Epic PMA / Nebula</span><span>Epic Cosmos</span>
+                        <span>Slate Docker</span><span>Workflow API</span>
+                        <span>Clarity / Caboodle</span><span>Cosmos Data Science</span>
+                    </div>
+                </div>
+                <div class="skill-group fade-in" style="animation-delay:0.2s">
+                    <div class="skill-group-title">MLOps & Cloud</div>
+                    <div class="skill-chips">
+                        <span>Docker</span><span>Azure ML</span><span>Microsoft Fabric</span>
+                        <span>Spark SQL</span><span>GitHub Actions</span>
+                    </div>
+                </div>
+                <div class="skill-group fade-in" style="animation-delay:0.25s">
+                    <div class="skill-group-title">Data & Languages</div>
+                    <div class="skill-chips">
+                        <span>Python</span><span>SQL</span><span>pandas</span>
+                        <span>NumPy</span><span>JavaScript</span><span>HTML / CSS</span>
+                    </div>
+                </div>
+                <div class="skill-group fade-in" style="animation-delay:0.3s">
+                    <div class="skill-group-title">Credentials & Accreditations</div>
+                    <div class="skill-chips">
+                        <span>CPHIMS</span>
+                        <span>M.S. Health Care Informatics — UCF</span>
+                        <span>Epic XGM Speaker 2026</span>
+                        <span>Epic Cadence</span>
+                        <span>Epic Prelude</span>
+                        <span>Epic Referrals & Authorizations</span>
+                        <span>Epic Real Time Eligibility</span>
+                        <span>Epic Campaigns</span>
+                        <span>Epic Cogito</span>
+                        <span>Epic Cosmos — Data Science</span>
+                        <span>Epic Cosmos — Data Architecture <em style="font-size:11px;opacity:.7">(in progress)</em></span>
                     </div>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section">
+        <div class="container">
+            <div class="section-label fade-in">Experience</div>
+            <h2 class="section-title fade-in">Where I've Worked</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Apr 2025 – Present</div>
+                        <div class="timeline-company">Jefferson Health Network</div>
+                        <div class="timeline-role">Clinical Data Scientist</div>
+                        <p class="timeline-desc">Designing and deploying predictive models in Epic's production environment. Built the first Cosmos-to-Nebula ML deployment in the Epic ecosystem. Presented at Epic XGM 2026.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in" style="animation-delay:0.1s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jun 2023 – Apr 2025</div>
+                        <div class="timeline-company">Lehigh Valley Health Network</div>
+                        <div class="timeline-role">Clinical BI Developer, Cogito Team</div>
+                        <p class="timeline-desc">Partnered with the Medical Director of Data Science to prototype clinical predictive models using JupyterLab. Extracted and preprocessed large-scale patient data from Epic Clarity using SQL to build ML-ready datasets. Built executive-facing dashboards tracking clinical KPIs across patient throughput, staffing, and virtual nursing programs.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in" style="animation-delay:0.2s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Apr 2022 – Apr 2023</div>
+                        <div class="timeline-company">University Health</div>
+                        <div class="timeline-role">SER Administrator / Epic Analyst</div>
+                        <p class="timeline-desc">Owned the organization's entire SER master file — the source of truth for provider identity across Epic. Sole author and maintainer of a 3,000-line SQL job that ran daily to automatically provision all internal providers, controlling how provider data flowed in and out of the system. Configured RTE for 4,000+ monthly eligibility checks and resolved X12/EDI claim rejection issues across multiple payers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-dark">
+        <div class="container contact-container">
+            <div class="section-label fade-in">Get in Touch</div>
+            <h2 class="section-title fade-in">Let's Talk</h2>
+            <p class="contact-sub fade-in">I'm open to interesting conversations about clinical ML, Epic deployments, or new opportunities.</p>
+            <div class="contact-links fade-in">
+                <a href="mailto:brown.treyk@gmail.com" class="contact-card">
+                    <div class="contact-icon">✉</div>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-val">brown.treyk@gmail.com</div>
+                </a>
+                <a href="https://www.linkedin.com/in/trey-b-372894144/" target="_blank" class="contact-card">
+                    <div class="contact-icon">in</div>
+                    <div class="contact-label">LinkedIn</div>
+                    <div class="contact-val">trey-b-372894144</div>
+                </a>
+                <a href="https://github.com/shibdad" target="_blank" class="contact-card">
+                    <div class="contact-icon">⌥</div>
+                    <div class="contact-label">GitHub</div>
+                    <div class="contact-val">shibdad</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <span>© 2025 Trey Brown</span>
+            <span>Made in Houston 🇺🇸</span>
+        </div>
+    </footer>
+
+    <!-- THEME TOGGLE -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+        <span class="toggle-icon dark-icon">🌙</span>
+        <span class="toggle-icon light-icon">☀️</span>
+    </button>
 
     <script src="script.js"></script>
 </body>
