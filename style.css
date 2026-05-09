@@ -240,21 +240,21 @@ img { display: block; max-width: 100%; }
 .pipe-sub { font-size: 11px; color: var(--text-faint); }
 .pipe-arrow { color: var(--text-faint); font-size: 18px; }
 
-/* Model card mini */
-.model-card-mini {
+/* Impact callout */
+.impact-callout {
     background: var(--surface); border: 1px solid var(--border);
-    border-radius: 10px; padding: 16px;
+    border-left: 3px solid var(--green);
+    border-radius: 10px; padding: 20px;
+    margin-top: 16px;
 }
-.mc-row {
-    display: flex; justify-content: space-between;
-    font-size: 13px; padding: 6px 0;
-    border-bottom: 1px solid var(--border);
-    color: var(--text-dim);
+.impact-callout-title {
+    font-size: 11px; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--green); margin-bottom: 10px;
 }
-.mc-row:last-of-type { border-bottom: none; }
-.mc-val { font-weight: 700; color: #f8fafc; }
-.mc-val.green { color: var(--green); }
-.mc-note { font-size: 11px; color: var(--text-faint); margin-top: 10px; text-align: center; }
+.impact-callout p {
+    font-size: 14px; color: var(--text-dim); line-height: 1.75;
+}
+body.light .impact-callout { background: #ffffff; }
 
 
 /* ── Project Cards Grid ───────────────────────────────────── */
@@ -393,7 +393,6 @@ body.light .featured-card { background: var(--surface2); border-color: var(--bor
 body.light .featured-card::before { background: linear-gradient(135deg, rgba(16,185,129,.04) 0%, transparent 60%); }
 body.light .project-card { background: #ffffff; border-color: var(--border); box-shadow: 0 1px 4px rgba(0,0,0,.06); }
 body.light .project-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.1); }
-body.light .model-card-mini { background: #ffffff; border-color: var(--border); }
 body.light .pipe-step { background: #ffffff; border-color: var(--border); }
 body.light .marquee-bar { background: var(--surface2); }
 body.light .marquee-fade.left  { background: linear-gradient(90deg,  var(--surface2), transparent); }
@@ -401,7 +400,6 @@ body.light .marquee-fade.right { background: linear-gradient(270deg, var(--surfa
 body.light .section-dark { background: var(--surface2); }
 body.light .contact-card { background: #ffffff; border-color: var(--border); box-shadow: 0 1px 4px rgba(0,0,0,.06); }
 body.light .footer { background: var(--surface2); }
-body.light .mc-val { color: #0f172a; }
 body.light .stat-num { color: #0f172a; }
 body.light .timeline-company { color: #0f172a; }
 body.light .project-title { color: #0f172a; }
