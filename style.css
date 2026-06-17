@@ -286,8 +286,20 @@ button { font-family: inherit; cursor: pointer; }
 .demo-tab .tab-i { color: var(--fg-subtle); margin-right: 7px; }
 .demo-tab[aria-selected="true"] .tab-i { color: var(--accent); }
 
-.demo-panel { display: none; }
-.demo-panel.active { display: block; animation: demoIn .4s var(--ease-out); }
+/* All panels share one grid cell, so the stage is always as tall as the
+   tallest panel — switching tabs never reflows the page (and the valve
+   terminal's two samples can't nudge the height either). */
+.demo-stage { display: grid; }
+.demo-panel {
+    grid-area: 1 / 1;
+    align-self: start; /* shorter panels sit under the tabs; slack falls to the bottom (reads as section padding) */
+    visibility: hidden; opacity: 0; pointer-events: none;
+}
+.demo-panel.active {
+    visibility: visible; opacity: 1; pointer-events: auto;
+    animation: demoIn .4s var(--ease-out);
+}
+.demo-panel:not(.active) .seg-frame.is-output::after { animation-play-state: paused; }
 @keyframes demoIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .demo-layout { display: grid; grid-template-columns: 1fr 320px; gap: 28px; align-items: start; }
 .demo-explain .demo-h { font-family: var(--font-display); font-size: 22px; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 10px; }
@@ -361,7 +373,11 @@ button { font-family: inherit; cursor: pointer; }
     .demo-layout { grid-template-columns: 1fr; gap: 20px; }
 }
 @media (max-width: 600px) {
+    /* Stack the before/after on phones, but cap each frame so the seg panel
+       lands near the (tallest) Epic panel's height — not so short it strands
+       the stage, not so tall it becomes the strander. */
     .seg-compare { grid-template-columns: 1fr; }
+    .seg-frame { width: 100%; max-width: 300px; justify-self: center; }
     .seg-arrow { transform: rotate(90deg); justify-self: center; }
 }
 
