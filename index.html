@@ -35,8 +35,10 @@
                 <div class="eyebrow hero-eyebrow">Clinical Data Scientist · Houston, TX</div>
                 <h1 class="display-xl hero-name">Trey <span class="last">Brown</span></h1>
                 <p class="body-lg hero-sub">
-                    I build machine learning directly into clinical workflows — turning complex
-                    patient data into clear, actionable signal for the people delivering care.
+                    I build and ship ML and LLM systems directly into clinical workflows — turning
+                    complex patient data into clear, actionable signal for the people delivering care.
+                    First in the Epic ecosystem to take a model from Cosmos research into live Nebula
+                    production.
                 </p>
                 <div class="hero-cta-row">
                     <a href="mailto:brown.treyk@gmail.com" class="btn btn-accent">Get in Touch</a>
@@ -299,6 +301,34 @@
                         <span>GPT-4o</span><span>Epic Workflow API</span><span>Python</span><span>Parcel</span>
                     </div>
                 </div>
+
+                <div class="cell project-card fade-in" style="transition-delay:.24s">
+                    <div class="project-card-tag">RAG · Clinical Guidelines · Care Gaps</div>
+                    <h4 class="project-card-title">Care Gap Detection (RAG)</h4>
+                    <p class="project-card-desc">
+                        Retrieval-augmented pipeline that grounds an LLM in clinical guideline text to
+                        surface open care gaps for a patient — retrieving the relevant guidance, then
+                        generating a recommendation tied back to its source so clinicians can verify it
+                        rather than trust a black box.
+                    </p>
+                    <div class="project-card-chips">
+                        <span>RAG</span><span>Vector retrieval</span><span>Azure OpenAI</span><span>Clinical guidelines</span>
+                    </div>
+                </div>
+
+                <div class="cell project-card fade-in" style="transition-delay:.32s">
+                    <div class="project-card-tag">MCP · Tooling · Agentic</div>
+                    <h4 class="project-card-title">Clinical MCP Server</h4>
+                    <p class="project-card-desc">
+                        Internal Model Context Protocol tool that exposes clinical data and model utilities
+                        to LLM-based workflows through a standard interface — letting an assistant pull the
+                        right context and call the right model without bespoke glue code. Built early in
+                        MCP's adoption.
+                    </p>
+                    <div class="project-card-chips">
+                        <span>MCP</span><span>Tool use</span><span>Python</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -321,6 +351,8 @@
                     <div class="skill-group-title">NLP &amp; LLMs</div>
                     <div class="skill-chips">
                         <span>GPT-4o / Azure OpenAI</span><span>Hugging Face Transformers</span>
+                        <span>RAG</span><span>Model Context Protocol (MCP)</span>
+                        <span>Tool use / function calling</span>
                         <span>Fine-tuning</span><span>Prompt engineering</span>
                         <span>Clinical text classification</span>
                     </div>
