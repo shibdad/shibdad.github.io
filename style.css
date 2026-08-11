@@ -530,3 +530,81 @@ body.dark .light-icon { display: block; }
     .demo-panel.active { animation: none; }
     .seg-frame.is-output::after { animation: none; display: none; }
 }
+
+/* =========================================================================
+   Recommender comparison chart (demo tab 05)
+   ========================================================================= */
+.rec-chart {
+    background: var(--inverse);
+    border: 1px solid var(--border-inverse);
+    border-radius: var(--radius-lg);
+    padding: 22px 22px 18px;
+    font-family: var(--font-mono);
+    color: var(--on-inverse);
+    box-shadow: var(--shadow-ink);
+}
+.rec-chart-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 11px;
+    letter-spacing: .04em;
+    color: var(--on-inverse-muted);
+    margin-bottom: 20px;
+}
+.rec-chart-src { opacity: .75; }
+.rec-row {
+    display: grid;
+    grid-template-columns: minmax(120px, 200px) 1fr 58px;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+.rec-name {
+    font-size: 12px;
+    line-height: 1.35;
+}
+.rec-name em {
+    font-style: normal;
+    display: block;
+    font-size: 10px;
+    color: var(--on-inverse-muted);
+}
+.rec-track {
+    height: 14px;
+    background: var(--inverse-2);
+    border-radius: var(--radius-pill);
+    overflow: hidden;
+}
+.rec-fill {
+    height: 100%;
+    width: 0;
+    border-radius: var(--radius-pill);
+    background: var(--on-inverse-muted);
+    transition: width 1.1s var(--ease-out);
+}
+.rec-fill.is-winner { background: var(--accent-inverse); }
+.rec-fill.is-zero { background: var(--signal); }
+.rec-chart.playing .rec-fill { width: var(--w); }
+.rec-val {
+    font-size: 12px;
+    text-align: right;
+    color: var(--on-inverse);
+    opacity: 0;
+    transition: opacity .5s ease .7s;
+}
+.rec-chart.playing .rec-val { opacity: 1; }
+.rec-chart-foot {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-inverse);
+    font-size: 11px;
+    line-height: 1.55;
+    color: var(--on-inverse-muted);
+}
+.demo-note a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+@media (max-width: 640px) {
+    .rec-row { grid-template-columns: 1fr; gap: 6px; margin-bottom: 16px; }
+    .rec-val { text-align: left; }
+}

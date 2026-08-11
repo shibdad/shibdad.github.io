@@ -200,6 +200,18 @@ function initDemos() {
     if (valveCard) players.valve = makeTerminalPlayer(valveCard, VALVE_SAMPLES);
     if (riskCard) players.risk = makeTerminalPlayer(riskCard, RISK_SAMPLES);
 
+    // Recommender chart: bars animate to width each time the tab activates
+    // (instantly under prefers-reduced-motion).
+    const recChart = document.querySelector("[data-rec-chart]");
+    if (recChart) players.rec = {
+        start() {
+            if (prefersReduced) { recChart.classList.add("playing"); return; }
+            recChart.classList.remove("playing");
+            requestAnimationFrame(() => requestAnimationFrame(() => recChart.classList.add("playing")));
+        },
+        stop() { recChart.classList.remove("playing"); },
+    };
+
     let current = null;
     function activate(name) {
         tabs.forEach((t) => t.setAttribute("aria-selected", String(t.dataset.tab === name)));
