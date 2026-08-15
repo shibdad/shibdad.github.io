@@ -204,27 +204,145 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 }
 .ghost-title .ghost { color: var(--ink-ghost); display: block; }
 
-/* Two-line role title (hero only): different phrase per line, smaller so
-   both fit without wrapping. */
-.role-title {
+/* =========================================================================
+   Hero — full bleed. The headline runs the whole page width instead of
+   sharing a column with the photo card; the card takes over at Projects.
+   ========================================================================= */
+.hero {
+    position: relative;
+    z-index: 1;
+    padding: calc(var(--nav-h) + 56px) var(--gutter) 72px;
+}
+.hero-inner { max-width: var(--max-w); margin: 0 auto; }
+
+.hero-intro {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+.hero-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    border: 1px solid var(--border);
+}
+.hero-intro-name { font-weight: 600; font-size: 15px; }
+.hero-intro-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
+.hero-intro-text {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--ink-subtle);
+    letter-spacing: .01em;
+}
+
+/* The signature move, at full width: line 1 solid, line 2 ghosted. */
+.hero-title {
     font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(28px, 4.2vw, 52px);
-    line-height: 1.12;
-    letter-spacing: -.01em;
+    font-weight: 800;
+    font-size: clamp(46px, 11vw, 148px);
+    line-height: .95;
+    letter-spacing: -.035em;
+    text-transform: uppercase;
     color: var(--ink);
 }
-.role-title .ghost { color: var(--ink-ghost); display: block; }
+/* Second line is longer than the first, so it rides at ~2/3 scale to stay
+   on one line instead of wrapping and swallowing the fold. */
+.hero-title .ghost {
+    color: var(--ink-ghost);
+    display: block;
+    font-size: .66em;
+    line-height: 1.05;
+}
+
+.hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 56px;
+    margin: 44px 0 40px;
+    padding-top: 36px;
+    border-top: 1px solid var(--border-soft);
+}
+.hero-stat .stat-num {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(34px, 4.5vw, 52px);
+    line-height: 1;
+    letter-spacing: -.03em;
+    color: var(--ink);
+}
+.hero-stat .stat-lbl {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink-subtle);
+    margin-top: 10px;
+}
 
 /* =========================================================================
-   Sticky layout: white photo card pinned left, content scrolls right
-   (only Hero + Projects sit beside it, so it releases well before
-   Experience — it shouldn't "float" for the whole page)
+   Marquee bands — two rows scrolling in opposite directions. Each row
+   holds two identical tracks; the pair translates -50% so the seam is
+   invisible and the loop never shows a gap.
+   ========================================================================= */
+.marquee-band {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    background: var(--bg-2);
+    padding: 6px 0;
+    overflow: hidden;
+    /* soften both ends so tags fade out rather than clip */
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee { display: flex; width: max-content; animation: marquee-scroll 38s linear infinite; }
+.marquee-reverse { animation-direction: reverse; animation-duration: 46s; }
+.marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 14px 11px;
+}
+.marquee-track span {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(15px, 1.8vw, 20px);
+    text-transform: uppercase;
+    letter-spacing: -.01em;
+    color: var(--ink-muted);
+    white-space: nowrap;
+}
+.marquee-track .marq-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex: none;
+}
+.marquee-reverse .marquee-track span { color: var(--ink-subtle); }
+.marquee-reverse .marquee-track .marq-dot { background: var(--accent-2); }
+
+@keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .marquee { animation: none; }
+}
+
+/* =========================================================================
+   Sticky layout: white photo card pinned left, content scrolls right.
+   Runs from Projects to the end of Tools; the CTA is full bleed again.
    ========================================================================= */
 .sticky-wrap {
     max-width: var(--max-w);
     margin: 0 auto;
-    padding: calc(var(--nav-h) + 40px) var(--gutter) 0;
+    padding: 80px var(--gutter) 0;
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: 48px;
@@ -234,7 +352,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 }
 .photo-card {
     position: sticky;
-    top: calc(var(--nav-h) + 24px);
+    top: 32px;
     width: 280px;
     background: var(--card-bg);
     color: var(--card-ink);
@@ -281,34 +399,16 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .photo-card-socials a:hover { background: var(--accent); color: #fff; }
 .photo-card-socials svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.8; }
 
-.scroll-col { display: flex; flex-direction: column; gap: 80px; padding-bottom: 40px; }
+.scroll-col { display: flex; flex-direction: column; gap: 96px; padding-bottom: 40px; }
 
-/* Hero content (top of scroll-col) */
 .hero-sub {
-    font-size: var(--fs-body-lg);
+    font-size: clamp(17px, 1.5vw, 20px);
     color: var(--ink-muted);
-    max-width: 52ch;
-    margin: 20px 0 28px;
+    max-width: 58ch;
+    margin: 28px 0 0;
 }
 
-.stat-trio { display: flex; gap: 40px; flex-wrap: wrap; margin-bottom: 28px; }
-.stat-trio .stat-num {
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: 34px;
-    color: var(--ink);
-    line-height: 1;
-}
-.stat-trio .stat-lbl {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--ink-subtle);
-    margin-top: 6px;
-}
-
-.highlight-tiles { display: flex; gap: 16px; }
+.highlight-tiles { display: flex; gap: 16px; max-width: 620px; }
 .highlight-tile {
     height: 168px;
     border-radius: var(--radius-md);
@@ -414,16 +514,36 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .exp-arrow svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
 
 /* =========================================================================
-   Contact — a real form: Send builds a mailto: link client-side, so it
-   works with no backend instead of silently going nowhere.
+   Closing CTA — full bleed like the hero, so the page opens and shuts on
+   the same oversized two-tone headline. Send builds a mailto: link
+   client-side, so the form works with no backend.
    ========================================================================= */
-.contact-sub { color: var(--ink-muted); font-size: var(--fs-body-lg); margin: -12px 0 36px; max-width: 40ch; }
+.cta {
+    position: relative;
+    z-index: 1;
+    margin-top: 120px;
+    padding: 96px var(--gutter) 96px;
+    border-top: 1px solid var(--border-soft);
+    background: var(--bg-2);
+}
+.cta-inner { max-width: var(--max-w); margin: 0 auto; }
+.cta-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(42px, 9vw, 118px);
+    line-height: .95;
+    letter-spacing: -.035em;
+    text-transform: uppercase;
+    color: var(--ink);
+}
+.cta-title .ghost { color: var(--ink-ghost); display: block; }
+.cta-sub { color: var(--ink-muted); font-size: var(--fs-body-lg); margin: 28px 0 40px; max-width: 44ch; }
 .contact-form { display: flex; flex-direction: column; gap: 14px; max-width: 520px; }
 .contact-form-row { display: flex; gap: 14px; }
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    background: var(--bg-2);
+    background: var(--bg-3);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     padding: 14px 16px;
@@ -445,9 +565,12 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
    Responsive
    ========================================================================= */
 @media (max-width: 860px) {
-    .sticky-wrap { grid-template-columns: 1fr; }
+    .sticky-wrap { grid-template-columns: 1fr; padding-top: 56px; }
     .photo-card { position: static; width: 100%; max-width: 320px; margin: 0 auto 8px; }
-    .scroll-col { gap: 64px; }
+    .scroll-col { gap: 72px; }
+    .hero { padding-bottom: 56px; }
+    .hero-stats { gap: 36px; margin: 36px 0 32px; padding-top: 28px; }
+    .cta { margin-top: 88px; padding: 72px var(--gutter); }
     .tool-row { flex-direction: column; align-items: flex-start; gap: 4px; }
     .tool-desc { text-align: left; }
     .proj-row { grid-template-columns: 88px 1fr auto; padding: 26px 0; }
@@ -457,10 +580,14 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 }
 @media (max-width: 620px) {
     .section { padding: 0 var(--gutter) 64px; }
-    .sticky-wrap { padding-top: calc(var(--nav-h) + 24px); }
+    .sticky-wrap { padding-top: 40px; }
     .nav-icon { width: 36px; height: 36px; }
     .nav-icon svg { width: 16px; height: 16px; }
-    .stat-trio { gap: 26px; }
+    .hero { padding-top: calc(var(--nav-h) + 32px); }
+    .hero-intro-text { flex-basis: 100%; }
+    .hero-stats { gap: 22px 32px; }
+    .hero-stat { min-width: 40%; }
+    .marquee-track { gap: 16px; padding: 12px 8px; }
     .highlight-tiles { flex-direction: column; }
     .highlight-tile.t-a, .highlight-tile.t-b { width: 100%; }
 }
