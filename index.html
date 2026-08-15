@@ -8,11 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <!-- ?v= bumps on every layout change so Pages/browser caches can't
+         serve an old stylesheet against new markup -->
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
-    <!-- NAV (scrolls away with the page, not fixed) -->
+    <!-- NAV — centered pill, scrolls away with the page -->
     <nav class="navigation" id="navbar">
         <div class="nav-pill" role="tablist" aria-label="Section navigation">
             <a href="#home" class="nav-icon active" data-section="home" title="Home">
@@ -32,215 +34,194 @@
                 <span class="nav-tip">Tools</span>
             </a>
             <a href="#contact" class="nav-icon" data-section="contact" title="Contact">
-                <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 6.5 8 6 8-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span class="nav-tip">Contact</span>
             </a>
         </div>
     </nav>
 
-    <!-- HERO — full bleed, headline fills the page width -->
-    <header class="hero" id="home">
-        <div class="hero-inner">
-            <div class="hero-intro fade-in">
-                <img src="photo-hero.jpg" alt="Trey Brown" class="hero-avatar" width="80" height="80" />
-                <span class="hero-intro-name">Trey Brown</span>
-                <span class="hero-intro-dot" aria-hidden="true"></span>
-                <span class="hero-intro-text">Clinical ML in Epic by day, recommenders and generative pipelines after hours</span>
-            </div>
-
-            <h1 class="hero-title fade-in">Data Scientist<br><span class="ghost">Full Stack Developer</span></h1>
-
-            <p class="hero-sub fade-in">
-                I build ML and LLM systems that make it to production, not just to a notebook:
-                risk models scoring live patients, recommenders trained on millions of reviews,
-                and generative pipelines that run unattended.
-            </p>
-
-            <div class="hero-stats fade-in">
-                <div class="hero-stat"><div class="stat-num">+3</div><div class="stat-lbl">Years in Production ML</div></div>
-                <div class="hero-stat"><div class="stat-num">+114K</div><div class="stat-lbl">Patients Scored</div></div>
-                <div class="hero-stat"><div class="stat-num">+3</div><div class="stat-lbl">Systems in Production</div></div>
-            </div>
-
-            <div class="highlight-tiles fade-in">
-                <div class="highlight-tile t-a">
-                    <div class="highlight-tile-icon"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M9 15l3-4 3 3 4-6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                    <div class="highlight-tile-label">Production ML Pipelines</div>
-                </div>
-                <div class="highlight-tile t-b">
-                    <div class="highlight-tile-icon"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke-linecap="round"/></svg></div>
-                    <div class="highlight-tile-label">Generative AI &amp; Recsys</div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- MARQUEE BANDS — two rows, opposite directions -->
-    <div class="marquee-band" aria-hidden="true">
-        <div class="marquee">
-            <div class="marquee-track">
-                <span>Production ML</span><span class="marq-dot"></span>
-                <span>Clinical Risk Models</span><span class="marq-dot"></span>
-                <span>Recommender Systems</span><span class="marq-dot"></span>
-                <span>Generative Pipelines</span><span class="marq-dot"></span>
-                <span>Model Explainability</span><span class="marq-dot"></span>
-            </div>
-            <div class="marquee-track">
-                <span>Production ML</span><span class="marq-dot"></span>
-                <span>Clinical Risk Models</span><span class="marq-dot"></span>
-                <span>Recommender Systems</span><span class="marq-dot"></span>
-                <span>Generative Pipelines</span><span class="marq-dot"></span>
-                <span>Model Explainability</span><span class="marq-dot"></span>
-            </div>
-        </div>
-        <div class="marquee marquee-reverse">
-            <div class="marquee-track">
-                <span>Python</span><span class="marq-dot"></span>
-                <span>XGBoost</span><span class="marq-dot"></span>
-                <span>SQL</span><span class="marq-dot"></span>
-                <span>SHAP</span><span class="marq-dot"></span>
-                <span>Azure ML</span><span class="marq-dot"></span>
-                <span>Docker</span><span class="marq-dot"></span>
-                <span>Epic Cosmos</span><span class="marq-dot"></span>
-            </div>
-            <div class="marquee-track">
-                <span>Python</span><span class="marq-dot"></span>
-                <span>XGBoost</span><span class="marq-dot"></span>
-                <span>SQL</span><span class="marq-dot"></span>
-                <span>SHAP</span><span class="marq-dot"></span>
-                <span>Azure ML</span><span class="marq-dot"></span>
-                <span>Docker</span><span class="marq-dot"></span>
-                <span>Epic Cosmos</span><span class="marq-dot"></span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sticky photo card runs from Projects through Contact -->
+    <!-- Two columns for the whole page: card sticks left, content scrolls right -->
     <div class="sticky-wrap">
-        <aside class="photo-card fade-in">
-            <div class="photo-card-img-wrap">
-                <img src="photo-hero.jpg" alt="Trey Brown" class="photo-card-img" width="720" height="720" />
+
+        <div class="card-col">
+          <div class="card-sticky">
+            <aside class="photo-card fade-in">
+                <div class="photo-card-img-wrap">
+                    <span class="status-pill"><i></i>Open to work</span>
+                    <img src="photo-hero.jpg" alt="Trey Brown" class="photo-card-img" width="720" height="720" />
+                </div>
+                <div class="photo-card-name">Trey Brown</div>
                 <div class="photo-card-badge" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
-            </div>
-            <div class="photo-card-name">Trey Brown</div>
-            <p class="photo-card-tag">Data scientist building ML systems that make it to production.</p>
-            <div class="photo-card-socials">
-                <a href="mailto:brown.treyk@gmail.com" title="Email" aria-label="Email">
-                    <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 6.5 8 6 8-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/trey-b-372894144/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
-                    <svg viewBox="0 0 24 24"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="4" r="2"/><path d="M11 21v-7a3 3 0 0 1 6 0v7M11 9v12"/></svg>
-                </a>
-                <a href="https://github.com/shibdad" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
-                    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
-                </a>
-            </div>
-        </aside>
+                <p class="photo-card-tag">A data scientist who builds ML systems that make it to production.</p>
+                <div class="photo-card-socials">
+                    <a href="mailto:brown.treyk@gmail.com" title="Email" aria-label="Email">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 6.5 8 6 8-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/trey-b-372894144/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="4" r="2"/><path d="M11 21v-7a3 3 0 0 1 6 0v7M11 9v12"/></svg>
+                    </a>
+                    <a href="https://github.com/shibdad" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+                    </a>
+                </div>
+            </aside>
+          </div>
+        </div>
 
         <div class="scroll-col">
 
+            <!-- HERO -->
+            <section id="home">
+                <h1 class="big-title fade-in">Data<br><span class="ghost">Scientist</span></h1>
+
+                <p class="hero-sub fade-in">
+                    I build ML and LLM systems that make it to production, not just to a notebook.
+                    Clinical risk models running live inside Epic by day, recommenders and
+                    generative pipelines after hours.
+                </p>
+
+                <div class="stats">
+                    <div class="stat fade-in"><div class="stat-num">+3</div><div class="stat-lbl">Years in<br>Production ML</div></div>
+                    <div class="stat fade-in"><div class="stat-num">+114K</div><div class="stat-lbl">Patients<br>Scored</div></div>
+                    <div class="stat fade-in"><div class="stat-num">+3</div><div class="stat-lbl">Systems in<br>Production</div></div>
+                </div>
+
+                <div class="tiles">
+                    <div class="tile t-a fade-in">
+                        <div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M9 15l3-4 3 3 4-6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        <div class="tile-foot">
+                            <div class="tile-label">Production ML,<br>Clinical Risk Models</div>
+                            <span class="tile-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </div>
+                    </div>
+                    <div class="tile t-b fade-in">
+                        <div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke-linecap="round"/></svg></div>
+                        <div class="tile-foot">
+                            <div class="tile-label">Recommenders,<br>Generative AI</div>
+                            <span class="tile-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- RECENT PROJECTS -->
             <section id="projects">
-                <h2 class="ghost-title fade-in">Recent<br><span class="ghost">Projects</span></h2>
+                <h2 class="big-title fade-in">Recent<br><span class="ghost">Projects</span></h2>
                 <div class="proj-list">
-                    <div class="proj-row fade-in">
-                        <img src="projects/hiv-risk.jpg" alt="" class="proj-thumb" onerror="this.style.background='var(--accent-soft)'; this.removeAttribute('src')" />
-                        <div>
+                    <a class="proj-row fade-in" href="https://github.com/shibdad" target="_blank" rel="noopener">
+                        <img src="projects/hiv-risk.jpg" alt="" class="proj-thumb" onerror="this.onerror=null; this.style.background='var(--accent-soft)'; this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'" />
+                        <div class="proj-text">
                             <div class="proj-title">HIV Risk Prediction</div>
                             <div class="proj-sub">XGBoost in live Epic production · 0.805 AUC</div>
                         </div>
-                        <span class="proj-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                    </div>
-                    <div class="proj-row fade-in" style="transition-delay:.06s">
-                        <img src="projects/wtf2eat.jpg" alt="" class="proj-thumb" onerror="this.style.background='var(--accent-2-soft)'; this.removeAttribute('src')" />
-                        <div>
-                            <a href="https://github.com/shibdad/wtf2EAT-models" target="_blank" rel="noopener" class="proj-title" style="text-decoration:none;">wtf2EAT</a>
+                        <span class="arrow-link"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </a>
+                    <a class="proj-row fade-in" href="https://github.com/shibdad/wtf2EAT-models" target="_blank" rel="noopener">
+                        <img src="projects/wtf2eat.jpg" alt="" class="proj-thumb" onerror="this.onerror=null; this.style.background='var(--accent-2-soft)'; this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'" />
+                        <div class="proj-text">
+                            <div class="proj-title">wtf2EAT</div>
                             <div class="proj-sub">3 recommenders on 3.2M Yelp reviews · BPR wins by 260x</div>
                         </div>
-                        <a href="https://github.com/shibdad/wtf2EAT-models" target="_blank" rel="noopener" class="proj-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                    </div>
-                    <div class="proj-row fade-in" style="transition-delay:.12s">
-                        <img src="projects/equanimity.jpg" alt="" class="proj-thumb" onerror="this.style.background='var(--terracotta-soft)'; this.removeAttribute('src')" />
-                        <div>
+                        <span class="arrow-link"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </a>
+                    <a class="proj-row fade-in" href="https://github.com/shibdad" target="_blank" rel="noopener">
+                        <img src="projects/equanimity.jpg" alt="" class="proj-thumb" onerror="this.onerror=null; this.style.background='var(--terracotta-soft)'; this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'" />
+                        <div class="proj-text">
                             <div class="proj-title">Equanimity &amp; Nocturne</div>
                             <div class="proj-sub">Unattended text-to-video pipelines</div>
                         </div>
-                        <span class="proj-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                    </div>
+                        <span class="arrow-link"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </a>
                 </div>
             </section>
 
             <!-- EXPERIENCE -->
             <section id="experience">
-                <h2 class="ghost-title fade-in">3+ Years<br><span class="ghost">Experience</span></h2>
+                <h2 class="big-title fade-in">3+ Years of<br><span class="ghost">Experience</span></h2>
                 <div class="exp-list">
                     <div class="exp-row fade-in">
                         <div class="exp-text">
                             <div class="exp-company">Jefferson Health Network</div>
                             <p class="exp-desc">Designing and deploying predictive models in Epic's production environment. Built the first Cosmos-to-Nebula ML deployment in the Epic ecosystem.</p>
-                            <div class="exp-date">Apr 2025 – Present</div>
+                            <div class="exp-date">Apr 2025 - Present</div>
                         </div>
-                        <span class="exp-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span class="arrow-link"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
-                    <div class="exp-row fade-in" style="transition-delay:.06s">
+                    <div class="exp-row fade-in">
                         <div class="exp-text">
                             <div class="exp-company">Lehigh Valley Health Network</div>
                             <p class="exp-desc">Partnered with the Medical Director of Data Science to prototype clinical predictive models and build ML-ready datasets from Epic Clarity.</p>
-                            <div class="exp-date">Jun 2023 – Apr 2025</div>
+                            <div class="exp-date">Jun 2023 - Apr 2025</div>
                         </div>
-                        <span class="exp-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span class="arrow-link"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
-                    <div class="exp-row fade-in" style="transition-delay:.12s">
+                    <div class="exp-row fade-in">
                         <div class="exp-text">
                             <div class="exp-company">University Health</div>
                             <p class="exp-desc">Owned the organization's entire SER master file, the source of truth for provider identity across Epic.</p>
-                            <div class="exp-date">Apr 2022 – Apr 2023</div>
+                            <div class="exp-date">Apr 2022 - Apr 2023</div>
                         </div>
-                        <span class="exp-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span class="arrow-link"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </div>
                 </div>
             </section>
 
-            <!-- TOOLS -->
+            <!-- TOOLS — two-column grid of monogram tile + name + descriptor -->
             <section id="tools">
-                <h2 class="ghost-title fade-in" style="margin-bottom:40px;">Technical<br><span class="ghost">Range</span></h2>
-                <div class="tools-list">
-                    <div class="tool-row fade-in"><span class="tool-name">XGBoost / scikit-learn</span><span class="tool-desc">ML &amp; Modeling</span></div>
-                    <div class="tool-row fade-in"><span class="tool-name">GPT-4o / Azure OpenAI</span><span class="tool-desc">LLM &amp; NLP</span></div>
-                    <div class="tool-row fade-in"><span class="tool-name">SHAP / Fairlearn</span><span class="tool-desc">Explainability</span></div>
-                    <div class="tool-row fade-in"><span class="tool-name">Docker / Azure ML</span><span class="tool-desc">MLOps</span></div>
-                    <div class="tool-row fade-in"><span class="tool-name">Epic Cosmos / Nebula</span><span class="tool-desc">Clinical Platform</span></div>
-                    <div class="tool-row fade-in"><span class="tool-name">Python / SQL / NumPy</span><span class="tool-desc">Core</span></div>
+                <h2 class="big-title fade-in">Daily<br><span class="ghost">Tools</span></h2>
+                <div class="tools-grid">
+                    <div class="tool fade-in"><span class="tool-mark">Py</span><div><div class="tool-name">Python</div><div class="tool-desc">Core Language</div></div></div>
+                    <div class="tool fade-in"><span class="tool-mark">XG</span><div><div class="tool-name">XGBoost</div><div class="tool-desc">Modeling</div></div></div>
+                    <div class="tool fade-in"><span class="tool-mark">SQL</span><div><div class="tool-name">SQL</div><div class="tool-desc">Data Wrangling</div></div></div>
+                    <div class="tool fade-in"><span class="tool-mark">SH</span><div><div class="tool-name">SHAP</div><div class="tool-desc">Explainability</div></div></div>
+                    <div class="tool fade-in"><span class="tool-mark">Az</span><div><div class="tool-name">Azure ML</div><div class="tool-desc">MLOps</div></div></div>
+                    <div class="tool fade-in"><span class="tool-mark">Ep</span><div><div class="tool-name">Epic Cosmos</div><div class="tool-desc">Clinical Platform</div></div></div>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact">
+                <h2 class="big-title fade-in">Let's Work<br><span class="ghost">Together</span></h2>
+
+                <form class="contact-form fade-in" id="contact-form">
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="cf-name">Name</label>
+                            <input type="text" id="cf-name" placeholder="Your Name" required />
+                        </div>
+                        <div class="field">
+                            <label for="cf-email">Email</label>
+                            <input type="email" id="cf-email" placeholder="your@email.com" required />
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="cf-topic">Topic</label>
+                        <select id="cf-topic">
+                            <option value="">Select...</option>
+                            <option>Full-time role</option>
+                            <option>Contract work</option>
+                            <option>Collaboration</option>
+                            <option>Something else</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="cf-message">Message</label>
+                        <textarea id="cf-message" placeholder="Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Submit</button>
+                </form>
+
+                <div class="contact-links fade-in">
+                    <a href="mailto:brown.treyk@gmail.com">brown.treyk@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/trey-b-372894144/" target="_blank" rel="noopener">linkedin.com/in/trey-b-372894144</a>
+                    <a href="https://github.com/shibdad" target="_blank" rel="noopener">github.com/shibdad</a>
                 </div>
             </section>
         </div>
     </div>
 
-    <!-- CONTACT — full bleed closing CTA, mirrors the hero -->
-    <section class="cta" id="contact">
-        <div class="cta-inner">
-            <h2 class="cta-title fade-in">Let's Work<br><span class="ghost">Together</span></h2>
-            <p class="cta-sub fade-in">I'm open to new opportunities. Tell me what you're building.</p>
-
-            <form class="contact-form fade-in" id="contact-form">
-                <div class="contact-form-row">
-                    <input type="text" id="cf-name" placeholder="Your name" required />
-                    <input type="email" id="cf-email" placeholder="Your email" required />
-                </div>
-                <textarea id="cf-message" placeholder="What's on your mind?" required></textarea>
-                <button type="submit" class="btn btn-accent" style="align-self:flex-start;">Send</button>
-            </form>
-
-            <div class="contact-links fade-in">
-                <a href="mailto:brown.treyk@gmail.com">brown.treyk@gmail.com</a>
-                <a href="https://www.linkedin.com/in/trey-b-372894144/" target="_blank" rel="noopener">linkedin.com/in/trey-b-372894144</a>
-                <a href="https://github.com/shibdad" target="_blank" rel="noopener">github.com/shibdad</a>
-            </div>
-        </div>
-    </section>
-
-    <script src="script.js"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>
