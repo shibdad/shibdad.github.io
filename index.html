@@ -7,627 +7,184 @@
     <meta name="description" content="Trey Brown, data scientist building ML and LLM systems that run in production: clinical risk models inside Epic, recommendation systems, and generative content pipelines.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- NAV -->
+    <!-- NAV (scrolls away with the page, not fixed) -->
     <nav class="navigation" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-brand">T<span class="dot">.</span>B</a>
-            <div class="nav-links">
-                <a href="#work" class="nav-link">Work</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="nav-actions">
-                <a href="mailto:brown.treyk@gmail.com" class="btn btn-accent">Get in touch</a>
-            </div>
+        <div class="nav-pill" role="tablist" aria-label="Section navigation">
+            <a href="#home" class="nav-icon active" data-section="home" title="Home">
+                <svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="nav-tip">Home</span>
+            </a>
+            <a href="#projects" class="nav-icon" data-section="projects" title="Projects">
+                <svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" stroke-linejoin="round"/></svg>
+                <span class="nav-tip">Projects</span>
+            </a>
+            <a href="#experience" class="nav-icon" data-section="experience" title="Experience">
+                <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="nav-tip">Experience</span>
+            </a>
+            <a href="#tools" class="nav-icon" data-section="tools" title="Tools">
+                <svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.7 2.7-2-2 2.7-2.7Z" stroke-linejoin="round"/></svg>
+                <span class="nav-tip">Tools</span>
+            </a>
+            <a href="#contact" class="nav-icon" data-section="contact" title="Contact">
+                <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 6.5 8 6 8-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="nav-tip">Contact</span>
+            </a>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section id="home" class="hero">
-        <div class="hero-top">
-            <div class="hero-content fade-in">
-                <div class="eyebrow hero-eyebrow">Data Scientist · Houston, TX</div>
-                <h1 class="display-xl hero-name">Trey <span class="last">Brown</span></h1>
-                <p class="body-lg hero-sub">
+    <!-- Sticky photo card runs the full page: Home through Contact -->
+    <div class="sticky-wrap">
+        <aside class="photo-card fade-in">
+            <div class="photo-card-img-wrap">
+                <img src="photo-hero.jpg" alt="Trey Brown" class="photo-card-img" width="720" height="720" />
+                <div class="photo-card-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </div>
+            <div class="photo-card-name">Trey Brown</div>
+            <p class="photo-card-tag">Data scientist building ML systems that make it to production.</p>
+            <div class="photo-card-socials">
+                <a href="mailto:brown.treyk@gmail.com" title="Email" aria-label="Email">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 6.5 8 6 8-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/trey-b-372894144/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="4" r="2"/><path d="M11 21v-7a3 3 0 0 1 6 0v7M11 9v12"/></svg>
+                </a>
+                <a href="https://github.com/shibdad" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+                </a>
+            </div>
+        </aside>
+
+        <div class="scroll-col">
+
+            <!-- HERO -->
+            <section id="home">
+                <h1 class="role-title fade-in">Data Scientist<br><span class="ghost">Full Stack Developer</span></h1>
+                <p class="hero-sub fade-in">
                     I build ML and LLM systems that make it to production: clinical risk models running
                     live inside Epic by day, recommendation systems and generative pipelines after hours.
-                    The common thread: models that actually get deployed, not just prototyped.
                 </p>
-                <div class="hero-cta-row">
-                    <a href="mailto:brown.treyk@gmail.com" class="btn btn-accent">Get in Touch</a>
-                    <a href="https://github.com/shibdad" target="_blank" rel="noopener" class="btn btn-outline">GitHub ↗</a>
-                    <a href="https://www.linkedin.com/in/trey-b-372894144/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn ↗</a>
+                <div class="stat-trio fade-in">
+                    <div class="stat-trio-item"><div class="stat-num">3+</div><div class="stat-lbl">Years in Production ML</div></div>
+                    <div class="stat-trio-item"><div class="stat-num">114K+</div><div class="stat-lbl">Patients Scored</div></div>
+                    <div class="stat-trio-item"><div class="stat-num">3</div><div class="stat-lbl">Systems in Production</div></div>
                 </div>
-            </div>
-            <div class="hero-photo-wrap fade-in" style="transition-delay:.12s">
-                <div class="hero-photo-ring"></div>
-                <img src="photo-web.jpg" alt="Trey Brown" class="hero-photo" width="900" height="900" />
-            </div>
+                <div class="highlight-tiles fade-in">
+                    <div class="highlight-tile t-a">
+                        <div class="highlight-tile-icon"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M9 15l3-4 3 3 4-6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        <div class="highlight-tile-label">Production ML Pipelines</div>
+                    </div>
+                    <div class="highlight-tile t-b">
+                        <div class="highlight-tile-icon"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke-linecap="round"/></svg></div>
+                        <div class="highlight-tile-label">Generative AI &amp; Recsys</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RECENT PROJECTS -->
+            <section id="projects">
+                <h2 class="ghost-title fade-in">Recent<br><span class="ghost">Projects</span></h2>
+                <div class="proj-list">
+                    <div class="proj-row fade-in">
+                        <img src="projects/hiv-risk.jpg" alt="" class="proj-thumb" onerror="this.style.background='var(--accent-soft)'; this.removeAttribute('src')" />
+                        <div>
+                            <div class="proj-title">HIV Risk Prediction</div>
+                            <div class="proj-sub">XGBoost in live Epic production · 0.805 AUC</div>
+                        </div>
+                        <span class="proj-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </div>
+                    <div class="proj-row fade-in" style="transition-delay:.06s">
+                        <img src="projects/wtf2eat.jpg" alt="" class="proj-thumb" onerror="this.style.background='var(--accent-2-soft)'; this.removeAttribute('src')" />
+                        <div>
+                            <a href="https://github.com/shibdad/wtf2EAT-models" target="_blank" rel="noopener" class="proj-title" style="text-decoration:none;">wtf2EAT</a>
+                            <div class="proj-sub">3 recommenders on 3.2M Yelp reviews · BPR wins by 260x</div>
+                        </div>
+                        <a href="https://github.com/shibdad/wtf2EAT-models" target="_blank" rel="noopener" class="proj-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    </div>
+                    <div class="proj-row fade-in" style="transition-delay:.12s">
+                        <img src="projects/equanimity.jpg" alt="" class="proj-thumb" onerror="this.style.background='var(--terracotta-soft)'; this.removeAttribute('src')" />
+                        <div>
+                            <div class="proj-title">Equanimity &amp; Nocturne</div>
+                            <div class="proj-sub">Unattended text-to-video pipelines</div>
+                        </div>
+                        <span class="proj-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EXPERIENCE -->
+            <section id="experience">
+                <h2 class="ghost-title fade-in">3+ Years<br><span class="ghost">Experience</span></h2>
+                <div class="exp-list">
+                    <div class="exp-row fade-in">
+                        <div class="exp-text">
+                            <div class="exp-company">Jefferson Health Network</div>
+                            <p class="exp-desc">Designing and deploying predictive models in Epic's production environment. Built the first Cosmos-to-Nebula ML deployment in the Epic ecosystem.</p>
+                            <div class="exp-date">Apr 2025 – Present</div>
+                        </div>
+                        <span class="exp-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </div>
+                    <div class="exp-row fade-in" style="transition-delay:.06s">
+                        <div class="exp-text">
+                            <div class="exp-company">Lehigh Valley Health Network</div>
+                            <p class="exp-desc">Partnered with the Medical Director of Data Science to prototype clinical predictive models and build ML-ready datasets from Epic Clarity.</p>
+                            <div class="exp-date">Jun 2023 – Apr 2025</div>
+                        </div>
+                        <span class="exp-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </div>
+                    <div class="exp-row fade-in" style="transition-delay:.12s">
+                        <div class="exp-text">
+                            <div class="exp-company">University Health</div>
+                            <p class="exp-desc">Owned the organization's entire SER master file, the source of truth for provider identity across Epic.</p>
+                            <div class="exp-date">Apr 2022 – Apr 2023</div>
+                        </div>
+                        <span class="exp-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TOOLS -->
+            <section id="tools">
+                <h2 class="ghost-title fade-in" style="margin-bottom:40px;">Technical<br><span class="ghost">Range</span></h2>
+                <div class="tools-list">
+                    <div class="tool-row fade-in"><span class="tool-name">XGBoost / scikit-learn</span><span class="tool-desc">ML & Modeling</span></div>
+                    <div class="tool-row fade-in"><span class="tool-name">GPT-4o / Azure OpenAI</span><span class="tool-desc">LLM & NLP</span></div>
+                    <div class="tool-row fade-in"><span class="tool-name">SHAP / Fairlearn</span><span class="tool-desc">Explainability</span></div>
+                    <div class="tool-row fade-in"><span class="tool-name">Docker / Azure ML</span><span class="tool-desc">MLOps</span></div>
+                    <div class="tool-row fade-in"><span class="tool-name">Epic Cosmos / Nebula</span><span class="tool-desc">Clinical Platform</span></div>
+                    <div class="tool-row fade-in"><span class="tool-name">Python / SQL / NumPy</span><span class="tool-desc">Core</span></div>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact">
+                <h2 class="ghost-title fade-in" style="margin-bottom:20px;">Let's<br><span class="ghost">Talk</span></h2>
+                <p class="contact-sub fade-in">I'm open to new opportunities.</p>
+
+                <form class="contact-form fade-in" id="contact-form">
+                    <div class="contact-form-row">
+                        <input type="text" id="cf-name" placeholder="Your name" required />
+                        <input type="email" id="cf-email" placeholder="Your email" required />
+                    </div>
+                    <textarea id="cf-message" placeholder="What's on your mind?" required></textarea>
+                    <button type="submit" class="btn btn-accent" style="align-self:flex-start;">Send</button>
+                </form>
+
+                <div class="contact-links fade-in">
+                    <a href="mailto:brown.treyk@gmail.com">brown.treyk@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/trey-b-372894144/" target="_blank" rel="noopener">linkedin.com/in/trey-b-372894144</a>
+                    <a href="https://github.com/shibdad" target="_blank" rel="noopener">github.com/shibdad</a>
+                </div>
+            </section>
         </div>
-    </section>
-
-    <!-- LIVE DEMOS -->
-    <section id="demos" class="section">
-        <div class="container">
-            <div class="eyebrow section-label fade-in">Interactive</div>
-            <h2 class="section-title fade-in">See the models <span class="serif-italic">work</span></h2>
-
-            <div class="demos-tabs fade-in" role="tablist" aria-label="Live demos">
-                <button class="demo-tab" role="tab" data-tab="seg" aria-selected="false"><span class="tab-i">01</span>Brain Segmentation</button>
-                <button class="demo-tab" role="tab" data-tab="valve" aria-selected="false"><span class="tab-i">02</span>Valve NLP</button>
-                <button class="demo-tab" role="tab" data-tab="epic" aria-selected="false"><span class="tab-i">03</span>Epic Output</button>
-                <button class="demo-tab" role="tab" data-tab="risk" aria-selected="false"><span class="tab-i">04</span>Risk Scoring</button>
-                <button class="demo-tab" role="tab" data-tab="rec" aria-selected="false"><span class="tab-i">05</span>Recommender</button>
-            </div>
-
-            <div class="demo-stage fade-in">
-            <!-- Panel: Brain tumor segmentation -->
-            <div class="demo-panel" role="tabpanel" data-panel="seg">
-                <div class="demo-layout">
-                    <div class="seg-compare">
-                        <div class="seg-frame">
-                            <img src="demo/brain-mri.png" alt="Brain MRI slice (model input)" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
-                            <div class="seg-ph" style="display:none">drop<br>demo/brain-mri.png</div>
-                            <span class="seg-label">MRI · input</span>
-                        </div>
-                        <div class="seg-arrow">→</div>
-                        <div class="seg-frame is-output">
-                            <img src="demo/brain-seg.png" alt="Model tumor contour overlay (output)" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
-                            <div class="seg-ph" style="display:none">drop<br>demo/brain-seg.png</div>
-                            <span class="seg-label">U-Net contour · tumor</span>
-                        </div>
-                    </div>
-                    <div class="demo-explain">
-                        <div class="demo-h">Brain tumor segmentation</div>
-                        <p class="body-sm">A U-Net trained on BraTS MRI slices contours tumor regions pixel-by-pixel: raw scan in, segmentation mask out. The same architecture that turns an image into a structured, measurable finding.</p>
-                        <div class="chips" style="margin-bottom:18px"><span>U-Net</span><span>PyTorch</span><span>BraTS</span></div>
-                        <p class="demo-note">Output from my own segmentation model · public BraTS data, no PHI.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panel: Valve NLP -->
-            <div class="demo-panel" role="tabpanel" data-panel="valve">
-                <div class="demo-layout">
-                    <div>
-                        <div class="term" data-term="valve">
-                            <div class="term-head">
-                                <div class="term-head-left">
-                                    <span class="term-dot" aria-hidden="true"></span>
-                                    <span class="term-fn" data-term-fn>valve.classify() · echo NLP</span>
-                                </div>
-                                <span class="term-count" data-term-count>0/4 entities</span>
-                            </div>
-                            <pre class="term-body" data-term-body></pre>
-                            <div class="term-foot">
-                                <span>→ <span class="out" data-term-out>valvular disease · GPT-4o</span></span>
-                                <span class="term-foot-right">
-                                    <span class="term-foot-dot" aria-hidden="true"></span>
-                                    synthetic · 0 PHI
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="demo-explain">
-                        <div class="demo-h">Valvular disease from narratives</div>
-                        <p class="body-sm">A GPT-4o pipeline reads an echocardiogram impression and returns the specific valvular disease, by valve and severity, when structured documentation is missing.</p>
-                        <div class="chips" style="margin-bottom:18px"><span>GPT-4o</span><span>Azure OpenAI</span><span>Microsoft Fabric</span></div>
-                        <p class="demo-note">Reads narrative/impression text today. Image-based echo input is on the roadmap.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panel: Epic output -->
-            <div class="demo-panel" role="tabpanel" data-panel="epic">
-                <div class="demo-layout">
-                    <div class="epic-mock">
-                        <div class="epic-mock-head">
-                            <span>Hyperspace · Patient List · AI Summary</span>
-                            <span class="dot-row"><i></i><i></i><i></i></span>
-                        </div>
-                        <div class="epic-mock-body">
-                            <div class="epic-block">
-                                <div class="epic-block-label">Infection Assessment</div>
-                                <p class="epic-text"><strong>Cellulitis of the right buttock</strong> documented: fever, swelling, and abscess. IV <strong>vancomycin</strong> and <strong>cefepime</strong> administered; surgical consult for <strong>incision &amp; drainage</strong> planned. Infection clearly suspected and being actively treated.</p>
-                            </div>
-                            <div class="epic-block">
-                                <div class="epic-block-label"><span>SOFA Score Extraction</span><span class="epic-total">Total 6</span></div>
-                                <div class="epic-row"><span class="k">Respiration</span><span class="v">PaO₂/FiO₂ 340 mmHg <span class="pts">+1</span></span></div>
-                                <div class="epic-row"><span class="k">Coagulation</span><span class="v">Platelets 130 ×10³/µL <span class="pts">+1</span></span></div>
-                                <div class="epic-row"><span class="k">Liver</span><span class="v">Bilirubin 1.4 mg/dL <span class="pts">+1</span></span></div>
-                                <div class="epic-row"><span class="k">Cardiovascular</span><span class="v">MAP 68 mmHg <span class="pts">+1</span></span></div>
-                                <div class="epic-row"><span class="k">CNS</span><span class="v">Glasgow Coma Scale 14 <span class="pts">+1</span></span></div>
-                                <div class="epic-row"><span class="k">Renal</span><span class="v">Creatinine 1.3 mg/dL <span class="pts">+1</span></span></div>
-                            </div>
-                        </div>
-                        <div class="epic-mock-foot">StoreStructuredText · Workflow API · GPT-4o</div>
-                    </div>
-                    <div class="demo-explain">
-                        <div class="demo-h">Infection &amp; SOFA, surfaced in Epic</div>
-                        <p class="body-sm">A GPT-4o Workflow API model reads the chart, states whether infection is suspected and being treated, and extracts a structured SOFA score, written straight into the patient list via a StoreStructuredText print group.</p>
-                        <div class="chips" style="margin-bottom:18px"><span>GPT-4o</span><span>Epic Workflow API</span><span>Hyperspace</span></div>
-                        <p class="demo-note">De-identified example output · SOFA values illustrative.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panel: Risk scoring -->
-            <div class="demo-panel" role="tabpanel" data-panel="risk">
-                <div class="demo-layout">
-                    <div>
-                        <div class="term" data-term="risk">
-                            <div class="term-head">
-                                <div class="term-head-left">
-                                    <span class="term-dot" aria-hidden="true"></span>
-                                    <span class="term-fn" data-term-fn>risk.score() · Epic production</span>
-                                </div>
-                                <span class="term-count" data-term-count>0/5 entities</span>
-                            </div>
-                            <pre class="term-body" data-term-body></pre>
-                            <div class="term-foot">
-                                <span>→ <span class="out" data-term-out>0.805 AUC · 114K scored</span></span>
-                                <span class="term-foot-right">
-                                    <span class="term-foot-dot" aria-hidden="true"></span>
-                                    synthetic · 0 PHI
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="demo-explain">
-                        <div class="demo-h">HIV risk, scored in production</div>
-                        <p class="body-sm">The XGBoost model scores a de-identified feature vector, shows the SHAP contributors driving the prediction, and fires the operational threshold straight into Epic's Nebula OPA.</p>
-                        <div class="chips" style="margin-bottom:18px"><span>XGBoost</span><span>SHAP</span><span>Epic Nebula</span></div>
-                        <p class="demo-note">Synthetic feature vector · the live model scores 114K+ patients.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Panel: Recommender comparison -->
-            <div class="demo-panel" role="tabpanel" data-panel="rec">
-                <div class="demo-layout">
-                    <div class="rec-chart" data-rec-chart>
-                        <div class="rec-chart-head">
-                            <span>HR@10 · leave-one-out · 37,807-item catalog</span>
-                            <span class="rec-chart-src">Yelp Open Dataset · 3.2M reviews</span>
-                        </div>
-                        <div class="rec-row">
-                            <span class="rec-name">BPR <em>(pairwise ranking)</em></span>
-                            <div class="rec-track"><div class="rec-fill is-winner" style="--w:100%"></div></div>
-                            <span class="rec-val">0.0693</span>
-                        </div>
-                        <div class="rec-row">
-                            <span class="rec-name">Popularity <em>(weighted rating)</em></span>
-                            <div class="rec-track"><div class="rec-fill" style="--w:4.8%"></div></div>
-                            <span class="rec-val">0.0033</span>
-                        </div>
-                        <div class="rec-row">
-                            <span class="rec-name">Matrix factorization <em>(pointwise)</em></span>
-                            <div class="rec-track"><div class="rec-fill is-zero" style="--w:0.4%"></div></div>
-                            <span class="rec-val">0.0000</span>
-                        </div>
-                        <div class="rec-chart-foot">
-                            MF beat its own RMSE baseline and still ranked no better than random:
-                            a model trained to predict ratings never learns to rank (Cremonesi et al., 2010).
-                        </div>
-                    </div>
-                    <div class="demo-explain">
-                        <div class="demo-h">Three recommenders, one honest test</div>
-                        <p class="body-sm">Built from scratch in NumPy and evaluated on a shared leave-one-out protocol chosen before seeing results: hide one review per user, rank all 37,807 restaurants, check the top 10. BPR wins at roughly 260x chance, and it's the one running behind the swipe UI, with a popularity fallback for cold-start users.</p>
-                        <div class="chips" style="margin-bottom:18px"><span>BPR</span><span>NumPy</span><span>Flask</span><span>HR@10 / NDCG@10</span></div>
-                        <p class="demo-note">Full write-up and model code: <a href="https://github.com/shibdad/wtf2EAT" target="_blank" rel="noopener">github.com/shibdad/wtf2EAT ↗</a></p>
-                    </div>
-                </div>
-            </div>
-            </div><!-- /.demo-stage -->
-        </div>
-    </section>
-
-    <!-- FEATURED WORK -->
-    <section id="work" class="section">
-        <div class="container">
-            <div class="eyebrow section-label fade-in">Featured Work</div>
-            <h2 class="section-title fade-in">Production ML, in <span class="serif-italic">clinical settings</span></h2>
-
-            <!-- FEATURED: XGM Project -->
-            <div class="featured-card fade-in">
-                <div class="featured-badge">★ Presented at Epic XGM 2026</div>
-                <div class="featured-inner">
-                    <div class="featured-text">
-                        <div class="project-tag">Healthcare ML · XGBoost · SHAP · Epic Cosmos</div>
-                        <h3 class="project-title">HIV Risk Prediction Model</h3>
-                        <p class="project-desc">
-                            Built and deployed an XGBoost model trained on Epic Cosmos data to proactively identify
-                            patients at elevated HIV risk, enabling clinical outreach before symptoms appear.
-                            Jefferson Health was the <strong>first organization in the Epic ecosystem</strong> to
-                            translate a Cosmos research model through Slate development into a live Nebula
-                            production deployment with an operational OPA.
-                        </p>
-                        <div class="stat-row">
-                            <div class="stat"><div class="stat-num">0.805</div><div class="stat-lbl">AUC (target departments)</div></div>
-                            <div class="stat"><div class="stat-num">114K+</div><div class="stat-lbl">Patients scored</div></div>
-                            <div class="stat"><div class="stat-num">~1,789</div><div class="stat-lbl">High-risk patients flagged</div></div>
-                        </div>
-                        <div class="project-details">
-                            <div class="detail-item">
-                                <span class="detail-label">Fairness-aware design</span>
-                                <span class="detail-val">Deliberately removed race and SVI features to prevent disproportionate flagging, accepting a 0.053 AUC trade-off for ethical deployment</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">SHAP in production</span>
-                                <span class="detail-val">TreeExplainer integrated into Epic PMA: clinicians see per-patient feature contributions directly in Hyperspace</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Deployment pipeline</span>
-                                <span class="detail-val">Cosmos → Slate Docker container → Nebula production, solving version conflicts across scikit-learn, XGBoost, and pickle serialization</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="featured-visual">
-                        <div class="pipeline-viz">
-                            <div class="pipe-step active">
-                                <div class="pipe-icon">🌐</div>
-                                <div class="pipe-name">Cosmos</div>
-                                <div class="pipe-sub">Research data</div>
-                            </div>
-                            <div class="pipe-arrow">→</div>
-                            <div class="pipe-step">
-                                <div class="pipe-icon">🐳</div>
-                                <div class="pipe-name">Slate</div>
-                                <div class="pipe-sub">Docker dev</div>
-                            </div>
-                            <div class="pipe-arrow">→</div>
-                            <div class="pipe-step">
-                                <div class="pipe-icon">🚀</div>
-                                <div class="pipe-name">Nebula</div>
-                                <div class="pipe-sub">Production</div>
-                            </div>
-                        </div>
-                        <div class="impact-callout">
-                            <div class="impact-callout-title">Why this matters</div>
-                            <p>Epic Cosmos is a research environment: getting a model out of it and into a live clinical workflow had never been done before. This project proved the full pipeline is possible and documented the path for other health systems to follow.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- OTHER PROJECTS GRID -->
-            <div class="cellgrid cols-3">
-                <div class="cell project-card fade-in">
-                    <div class="project-card-tag">NLP · LLM · Epic PMA</div>
-                    <h4 class="project-card-title">Valvular Disease NLP Pipeline</h4>
-                    <p class="project-card-desc">
-                        Production GPT-4o inference pipeline that classifies echocardiogram impressions into
-                        multi-class valvular severity labels (none / trace-mild / moderate / severe) when
-                        structured documentation is absent. Migrated from Epic PMA to Microsoft Fabric using
-                        Azure OpenAI and Spark SQL for scale beyond the 15-minute RWB timeout limit.
-                    </p>
-                    <div class="project-card-chips">
-                        <span>GPT-4o</span><span>Azure OpenAI</span><span>Microsoft Fabric</span><span>Spark SQL</span>
-                    </div>
-                </div>
-
-                <div class="cell project-card fade-in" style="transition-delay:.08s">
-                    <div class="project-card-tag">NLP · Transformers · Research</div>
-                    <h4 class="project-card-title">Brain Edema Detection <span class="research-badge">In Research</span></h4>
-                    <p class="project-card-desc">
-                        Exploring lightweight transformer alternatives (&lt;5GB, CPU-only) to replace high-cost
-                        LLM inference for brain edema classification from radiology impressions, targeting
-                        Epic Nebula deployment constraints. Current approach uses GPT-4o via Epic's AI Services
-                        framework; evaluating fine-tuned DistilBERT and model distillation strategies.
-                        Labeled 82K reports for training data.
-                    </p>
-                    <div class="project-card-chips">
-                        <span>DistilBERT</span><span>Hugging Face</span><span>PyTorch</span><span>GPT-4o</span><span>Epic PMA</span>
-                    </div>
-                </div>
-
-                <div class="cell project-card fade-in" style="transition-delay:.16s">
-                    <div class="project-card-tag">LLM · Clinical NLP · Epic Workflow API</div>
-                    <h4 class="project-card-title">Clinical Note Summarizer</h4>
-                    <p class="project-card-desc">
-                        GPT-4o-powered Epic Workflow API model that summarizes clinical notes on demand,
-                        surfacing output directly in the patient list via a StoreStructuredText print group
-                        in Hyperspace. Built using Epic's native cognitive inference framework
-                        (epic.io.workflow_integrations) extracted from Slate Docker.
-                    </p>
-                    <div class="project-card-chips">
-                        <span>GPT-4o</span><span>Epic Workflow API</span><span>Python</span><span>Parcel</span>
-                    </div>
-                </div>
-
-                <div class="cell project-card fade-in" style="transition-delay:.24s">
-                    <div class="project-card-tag">RAG · Clinical Guidelines · Care Gaps</div>
-                    <h4 class="project-card-title">Care Gap Detection (RAG)</h4>
-                    <p class="project-card-desc">
-                        Retrieval-augmented pipeline that grounds an LLM in clinical guideline text to
-                        surface open care gaps for a patient: retrieving the relevant guidance, then
-                        generating a recommendation tied back to its source so clinicians can verify it
-                        rather than trust a black box.
-                    </p>
-                    <div class="project-card-chips">
-                        <span>RAG</span><span>Vector retrieval</span><span>Azure OpenAI</span><span>Clinical guidelines</span>
-                    </div>
-                </div>
-
-                <div class="cell project-card fade-in" style="transition-delay:.32s">
-                    <div class="project-card-tag">MCP · Tooling · Agentic</div>
-                    <h4 class="project-card-title">Clinical MCP Server</h4>
-                    <p class="project-card-desc">
-                        Internal Model Context Protocol tool that exposes clinical data and model utilities
-                        to LLM-based workflows through a standard interface, letting an assistant pull the
-                        right context and call the right model.
-                    </p>
-                    <div class="project-card-chips">
-                        <span>MCP</span><span>Tool use</span><span>Python</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PERSONAL PROJECTS -->
-    <section id="projects" class="section section-alt">
-        <div class="container">
-            <div class="eyebrow section-label fade-in">Personal Projects</div>
-            <h2 class="section-title fade-in">What I build <span class="serif-italic">after hours</span></h2>
-
-            <div class="featured-card fade-in">
-                <div class="featured-badge">★ Open source: full write-up on GitHub</div>
-                <div class="featured-inner">
-                    <div class="featured-text">
-                        <div class="project-tag">Recommendation Systems · BPR · NumPy · Flask</div>
-                        <h3 class="project-title">wtf2EAT: Restaurant Recommender</h3>
-                        <p class="project-desc">
-                            A swipe-based restaurant recommendation app, built to answer one question properly:
-                            which ranking approach is actually the best? Three models implemented from scratch in
-                            NumPy (popularity baseline, matrix factorization, and Bayesian Personalized
-                            Ranking), compared on a shared leave-one-out protocol over the Yelp Open Dataset.
-                        </p>
-                        <div class="stat-row">
-                            <div class="stat"><div class="stat-num">260x</div><div class="stat-lbl">BPR's HR@10 vs. chance</div></div>
-                            <div class="stat"><div class="stat-num">3.2M</div><div class="stat-lbl">Reviews · 4 metros</div></div>
-                            <div class="stat"><div class="stat-num">0.911</div><div class="stat-lbl">BPR test AUC</div></div>
-                        </div>
-                        <div class="project-details">
-                            <div class="detail-item">
-                                <span class="detail-label">Metric chosen first</span>
-                                <span class="detail-val">The evaluation was fixed before results existed. RMSE said matrix factorization was fine; the ranking metric that matches the product said the opposite, and changed which model wins</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Cold-start by design</span>
-                                <span class="detail-val">Every new user starts on a per-metro Bayesian weighted-rating path; personalization has to beat it to earn its complexity (the median user has one review)</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-label">License-aware demo</span>
-                                <span class="detail-val">Yelp's terms allow training but not public display, so the demo serves distribution-matched synthetic restaurants through the same pipeline, disclosed on screen</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="featured-visual">
-                        <div class="pipeline-viz">
-                            <div class="pipe-step active">
-                                <div class="pipe-icon">📊</div>
-                                <div class="pipe-name">Yelp data</div>
-                                <div class="pipe-sub">3.2M reviews</div>
-                            </div>
-                            <div class="pipe-arrow">→</div>
-                            <div class="pipe-step">
-                                <div class="pipe-icon">⚖️</div>
-                                <div class="pipe-name">3 models</div>
-                                <div class="pipe-sub">One protocol</div>
-                            </div>
-                            <div class="pipe-arrow">→</div>
-                            <div class="pipe-step">
-                                <div class="pipe-icon">📱</div>
-                                <div class="pipe-name">Swipe app</div>
-                                <div class="pipe-sub">Flask + JS</div>
-                            </div>
-                        </div>
-                        <div class="impact-callout">
-                            <div class="impact-callout-title">Why this matters</div>
-                            <p>Ranking quality and rating accuracy are different problems: the model that won its own metric lost the one users feel. Picking the metric before the answer is the whole discipline, and this project shows it end to end.</p>
-                        </div>
-                        <a href="https://github.com/shibdad/wtf2EAT" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:16px; align-self:flex-start;">View on GitHub ↗</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cellgrid cols-3">
-                <div class="cell project-card fade-in">
-                    <div class="project-card-tag">Generative AI · TTS · Stable Diffusion</div>
-                    <h4 class="project-card-title">Equanimity &amp; Nocturne</h4>
-                    <p class="project-card-desc">
-                        Two end-to-end text-to-video pipelines that turn a theme list into finished
-                        short-form videos, unattended: LLM scripting, Kokoro TTS narration, Stable
-                        Diffusion imagery over a self-hosted GPU API, faster-whisper caption alignment,
-                        and ffmpeg assembly. Nocturne adds serialized five-episode story arcs with
-                        persistent character and world state across runs. Everything but the LLM call
-                        runs locally at zero marginal cost.
-                    </p>
-                    <div class="project-card-chips">
-                        <span>Kokoro TTS</span><span>Stable Diffusion</span><span>faster-whisper</span><span>ffmpeg</span><span>cron-safe</span>
-                    </div>
-                </div>
-
-                <div class="cell project-card fade-in" style="transition-delay:.08s">
-                    <div class="project-card-tag">LLM Pipeline · Automation</div>
-                    <h4 class="project-card-title">Japanese Learning Pipeline</h4>
-                    <p class="project-card-desc">
-                        Automated content pipeline that generates N4/N3-level Japanese lessons (kanji,
-                        grammar, and vocabulary cards with rendered visuals), runs them through an
-                        LLM-based QA agent, and delivers on schedule via Telegram. Built around Groq
-                        for generation and a custom card renderer for typography-correct Japanese text.
-                    </p>
-                    <div class="project-card-chips">
-                        <span>Groq</span><span>LLM QA agent</span><span>Pillow</span><span>Telegram API</span>
-                    </div>
-                </div>
-
-                <div class="cell project-card fade-in" style="transition-delay:.16s">
-                    <div class="project-card-tag">Recsys · Product Thinking</div>
-                    <h4 class="project-card-title">What's next</h4>
-                    <p class="project-card-desc">
-                        Wiring real swipe logs into wtf2EAT's BPR training loop (a swipe-left is a far
-                        stronger negative than "never reviewed"), and a live distance re-ranking layer.
-                        The interesting problems start once real interaction data exists.
-                    </p>
-                    <div class="project-card-chips">
-                        <span>Implicit feedback</span><span>Online learning</span><span>Re-ranking</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section">
-        <div class="container">
-            <div class="eyebrow section-label fade-in">Technical Range</div>
-            <h2 class="section-title fade-in">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-group fade-in">
-                    <div class="skill-group-title">ML &amp; Modeling</div>
-                    <div class="skill-chips">
-                        <span>XGBoost</span><span>scikit-learn</span><span>PyTorch</span>
-                        <span>Recommender systems (BPR, matrix factorization)</span>
-                        <span>DistilBERT / ClinicalBERT</span><span>SHAP</span>
-                        <span>Cross-validation</span><span>Class imbalance</span><span>Fairlearn</span>
-                    </div>
-                </div>
-                <div class="skill-group fade-in" style="transition-delay:.06s">
-                    <div class="skill-group-title">NLP &amp; LLMs</div>
-                    <div class="skill-chips">
-                        <span>GPT-4o / Azure OpenAI</span><span>Hugging Face Transformers</span>
-                        <span>RAG</span><span>Model Context Protocol (MCP)</span>
-                        <span>Tool use / function calling</span>
-                        <span>Fine-tuning</span><span>Prompt engineering</span>
-                        <span>Clinical text classification</span>
-                    </div>
-                </div>
-                <div class="skill-group fade-in" style="transition-delay:.1s">
-                    <div class="skill-group-title">Epic Ecosystem</div>
-                    <div class="skill-chips">
-                        <span>Epic PMA / Nebula</span><span>Epic Cosmos</span>
-                        <span>Slate Docker</span><span>Workflow API</span>
-                        <span>Clarity / Caboodle</span><span>Cosmos Data Science</span>
-                    </div>
-                </div>
-                <div class="skill-group fade-in" style="transition-delay:.14s">
-                    <div class="skill-group-title">MLOps &amp; Cloud</div>
-                    <div class="skill-chips">
-                        <span>Docker</span><span>Azure ML</span><span>Microsoft Fabric</span>
-                        <span>Spark SQL</span><span>GitHub Actions</span>
-                    </div>
-                </div>
-                <div class="skill-group fade-in" style="transition-delay:.18s">
-                    <div class="skill-group-title">Data &amp; Languages</div>
-                    <div class="skill-chips">
-                        <span>Python</span><span>SQL</span><span>pandas</span>
-                        <span>NumPy</span><span>JavaScript</span><span>HTML / CSS</span>
-                    </div>
-                </div>
-                <div class="skill-group fade-in" style="transition-delay:.22s">
-                    <div class="skill-group-title">Credentials &amp; Accreditations</div>
-                    <div class="skill-chips">
-                        <span>CPHIMS</span>
-                        <span>M.S. Health Care Informatics, UCF</span>
-                        <span>Epic XGM Speaker 2026</span>
-                        <span>Epic Cadence</span>
-                        <span>Epic Prelude</span>
-                        <span>Epic Referrals &amp; Authorizations</span>
-                        <span>Epic Real Time Eligibility</span>
-                        <span>Epic Campaigns</span>
-                        <span>Epic Cogito</span>
-                        <span>Epic Cosmos: Data Science</span>
-                        <span>Epic Cosmos: Data Architecture <em style="font-size:11px;opacity:.7">(in progress)</em></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section">
-        <div class="container">
-            <div class="eyebrow section-label fade-in">Experience</div>
-            <h2 class="section-title fade-in">Where I've worked</h2>
-            <div class="timeline">
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Apr 2025 – Present</div>
-                        <div class="timeline-company">Jefferson Health Network</div>
-                        <div class="timeline-role">Clinical Data Scientist</div>
-                        <p class="timeline-desc">Designing and deploying predictive models in Epic's production environment. Built the first Cosmos-to-Nebula ML deployment in the Epic ecosystem. Presented at Epic XGM 2026.</p>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in" style="transition-delay:.08s">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Jun 2023 – Apr 2025</div>
-                        <div class="timeline-company">Lehigh Valley Health Network</div>
-                        <div class="timeline-role">Senior Clinical BI Developer, Cogito Team</div>
-                        <p class="timeline-desc">Partnered with the Medical Director of Data Science to prototype clinical predictive models using JupyterLab. Extracted and preprocessed large-scale patient data from Epic Clarity using SQL to build ML-ready datasets. Built executive-facing dashboards tracking clinical KPIs across patient throughput, staffing, and virtual nursing programs.</p>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in" style="transition-delay:.16s">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Apr 2022 – Apr 2023</div>
-                        <div class="timeline-company">University Health</div>
-                        <div class="timeline-role">SER Administrator / Epic Analyst</div>
-                        <p class="timeline-desc">Owned the organization's entire SER master file, the source of truth for provider identity across Epic. Sole author and maintainer of a 3,000-line SQL job that ran daily to automatically provision all internal providers, controlling how provider data flowed in and out of the system. Configured RTE for 4,000+ monthly eligibility checks and resolved X12/EDI claim rejection issues across multiple payers.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section section-alt">
-        <div class="container contact-container">
-            <div class="eyebrow section-label fade-in">Get in Touch</div>
-            <h2 class="section-title fade-in">Let's <span class="serif-italic">talk</span></h2>
-            <p class="contact-sub fade-in">I'm open to new opportunities.</p>
-            <div class="contact-links fade-in">
-                <a href="mailto:brown.treyk@gmail.com" class="contact-card">
-                    <div class="contact-icon">✉</div>
-                    <div class="contact-label">Email</div>
-                    <div class="contact-val">brown.treyk@gmail.com</div>
-                </a>
-                <a href="https://www.linkedin.com/in/trey-b-372894144/" target="_blank" rel="noopener" class="contact-card">
-                    <div class="contact-icon">in</div>
-                    <div class="contact-label">LinkedIn</div>
-                    <div class="contact-val">trey-b-372894144</div>
-                </a>
-                <a href="https://github.com/shibdad" target="_blank" rel="noopener" class="contact-card">
-                    <div class="contact-icon">⌥</div>
-                    <div class="contact-label">GitHub</div>
-                    <div class="contact-val">shibdad</div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <span>© 2026 Trey Brown</span>
-            <span>Made in Houston 🇺🇸</span>
-        </div>
-    </footer>
-
-    <!-- THEME TOGGLE -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
-        <span class="toggle-icon dark-icon">🌙</span>
-        <span class="toggle-icon light-icon">☀️</span>
-    </button>
+    </div>
 
     <script src="script.js"></script>
 </body>
