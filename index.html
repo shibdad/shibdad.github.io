@@ -7,10 +7,13 @@
     <meta name="description" content="Trey Brown, data scientist building ML and LLM systems that run in production: clinical risk models inside Epic, recommendation systems, and generative content pipelines.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Noto Sans KR carries the Hangul greeting in the hero; Inter has no
+         Hangul glyphs, so without it every OS falls back to a different
+         system font and the line renders inconsistently. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
     <!-- ?v= bumps on every layout change so Pages/browser caches can't
          serve an old stylesheet against new markup -->
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
@@ -49,7 +52,7 @@
                 <div class="photo-card-img-wrap">
                     <img src="photo-hero.png" alt="Trey Brown" class="photo-card-img" width="360" height="360" />
                 </div>
-                <div class="photo-card-name">Trey Brown</div>
+                <div class="photo-card-name">Trey <span class="photo-card-surname">Brown</span></div>
                 <p class="photo-card-tag">Data Scientist and AI Engineer focused on AI/ML, GenAI systems, and applied research.</p>
                 <div class="photo-card-socials">
                     <a href="mailto:brown.treyk@gmail.com" title="Email" aria-label="Email">
@@ -70,6 +73,8 @@
 
             <!-- HERO -->
             <section id="home">
+                <p class="hero-greeting fade-in" lang="ko">안녕하세요, 반갑습니다</p>
+
                 <h1 class="big-title fade-in">Data<br><span class="ghost">Scientist</span></h1>
 
                 <p class="hero-sub fade-in">
@@ -77,12 +82,6 @@
                     intelligence and machine learning solutions. Beauty is when
                     ideas come to fruition.
                 </p>
-
-                <div class="stats">
-                    <div class="stat fade-in"><div class="stat-num">+3</div><div class="stat-lbl">Years in<br>Production ML</div></div>
-                    <div class="stat fade-in"><div class="stat-num">+114K</div><div class="stat-lbl">Patients<br>Scored</div></div>
-                    <div class="stat fade-in"><div class="stat-num">+3</div><div class="stat-lbl">Systems in<br>Production</div></div>
-                </div>
 
                 <div class="tiles">
                     <div class="tile t-a fade-in">
@@ -107,7 +106,7 @@
                 <h2 class="big-title fade-in">Recent<br><span class="ghost">Projects</span></h2>
                 <div class="proj-list">
                     <a class="proj-row fade-in" href="https://github.com/shibdad" target="_blank" rel="noopener">
-                        <img src="projects/hiv-risk.jpg" alt="" class="proj-thumb" onerror="this.onerror=null; this.style.background='var(--accent-soft)'; this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'" />
+                        <img src="projects/hiv-risk.svg" alt="" class="proj-thumb" onerror="this.onerror=null; this.style.background='var(--accent-soft)'; this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'" />
                         <div class="proj-text">
                             <div class="proj-title">HIV Risk Prediction</div>
                             <div class="proj-sub">First in Epic ecosystem to deploy a Cosmos-trained model · XGBoost 0.805 AUC</div>
@@ -115,7 +114,7 @@
                         <span class="arrow-link"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </a>
                     <a class="proj-row fade-in" href="https://github.com/shibdad/wtf2EAT-models" target="_blank" rel="noopener">
-                        <img src="projects/wtf2eat.jpg" alt="" class="proj-thumb" onerror="this.onerror=null; this.style.background='var(--accent-2-soft)'; this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'" />
+                        <img src="projects/wtf2eat.svg" alt="" class="proj-thumb" onerror="this.onerror=null; this.style.background='var(--accent-2-soft)'; this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'" />
                         <div class="proj-text">
                             <div class="proj-title">wtf2EAT</div>
                             <div class="proj-sub">3 recommenders on 3.2M Yelp reviews · Bayesian Probability Ranking</div>
@@ -123,7 +122,7 @@
                         <span class="arrow-link"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                     </a>
                     <a class="proj-row fade-in" href="https://github.com/shibdad" target="_blank" rel="noopener">
-                        <img src="projects/equanimity.jpg" alt="" class="proj-thumb" onerror="this.onerror=null; this.style.background='var(--terracotta-soft)'; this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'" />
+                        <img src="projects/equanimity.svg" alt="" class="proj-thumb" onerror="this.onerror=null; this.style.background='var(--terracotta-soft)'; this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'" />
                         <div class="proj-text">
                             <div class="proj-title">Equanimity &amp; Nocturne</div>
                             <div class="proj-sub">Unattended text-to-video pipelines</div>
@@ -164,16 +163,32 @@
                 </div>
             </section>
 
-            <!-- TOOLS — two-column grid of monogram tile + name + descriptor -->
+            <!-- TOOLS — grouped by discipline so the grid reads as breadth
+                 (ML / GenAI / data / deploy) rather than a flat keyword list.
+                 Each .tool-cat header spans both columns of the grid. -->
             <section id="tools">
-                <h2 class="big-title fade-in">Daily<br><span class="ghost">Tools</span></h2>
+                <h2 class="big-title fade-in">Tools &amp;<br><span class="ghost">Platforms</span></h2>
                 <div class="tools-grid">
+
+                    <h3 class="tool-cat fade-in">Machine Learning</h3>
                     <div class="tool fade-in"><span class="tool-mark">Py</span><div><div class="tool-name">Python</div><div class="tool-desc">Core Language</div></div></div>
-                    <div class="tool fade-in"><span class="tool-mark">XG</span><div><div class="tool-name">XGBoost</div><div class="tool-desc">Modeling</div></div></div>
-                    <div class="tool fade-in"><span class="tool-mark">SQL</span><div><div class="tool-name">SQL</div><div class="tool-desc">Data Wrangling</div></div></div>
+                    <div class="tool fade-in"><span class="tool-mark">XG</span><div><div class="tool-name">XGBoost</div><div class="tool-desc">Gradient Boosting</div></div></div>
+                    <div class="tool fade-in"><span class="tool-mark">PT</span><div><div class="tool-name">PyTorch</div><div class="tool-desc">Deep Learning</div></div></div>
                     <div class="tool fade-in"><span class="tool-mark">SH</span><div><div class="tool-name">SHAP</div><div class="tool-desc">Explainability</div></div></div>
-                    <div class="tool fade-in"><span class="tool-mark">Az</span><div><div class="tool-name">Azure ML</div><div class="tool-desc">MLOps</div></div></div>
-                    <div class="tool fade-in"><span class="tool-mark">Ep</span><div><div class="tool-name">Epic Cosmos</div><div class="tool-desc">Clinical Platform</div></div></div>
+
+                    <h3 class="tool-cat fade-in">Generative AI</h3>
+                    <div class="tool fade-in"><span class="tool-mark">AO</span><div><div class="tool-name">Azure OpenAI</div><div class="tool-desc">LLM Services</div></div></div>
+                    <div class="tool fade-in"><span class="tool-mark">T2V</span><div><div class="tool-name">Text-to-Video</div><div class="tool-desc">Generative Pipelines</div></div></div>
+
+                    <h3 class="tool-cat fade-in">Data &amp; Clinical Systems</h3>
+                    <div class="tool fade-in"><span class="tool-mark">SQL</span><div><div class="tool-name">SQL</div><div class="tool-desc">Data Wrangling</div></div></div>
+                    <div class="tool fade-in"><span class="tool-mark">Fa</span><div><div class="tool-name">Microsoft Fabric</div><div class="tool-desc">Lakehouse &amp; Analytics</div></div></div>
+                    <div class="tool fade-in"><span class="tool-mark">DF</span><div><div class="tool-name">Azure Data Factory</div><div class="tool-desc">Pipeline Orchestration</div></div></div>
+                    <div class="tool fade-in"><span class="tool-mark">FH</span><div><div class="tool-name">FHIR</div><div class="tool-desc">SMART on FHIR Apps</div></div></div>
+
+                    <h3 class="tool-cat fade-in">Deployment &amp; MLOps</h3>
+                    <div class="tool fade-in"><span class="tool-mark">Az</span><div><div class="tool-name">Azure ML</div><div class="tool-desc">Model Deployment</div></div></div>
+                    <div class="tool fade-in"><span class="tool-mark">Dk</span><div><div class="tool-name">Docker</div><div class="tool-desc">Containerization</div></div></div>
                 </div>
             </section>
 
@@ -218,6 +233,6 @@
         </div>
     </div>
 
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=11"></script>
 </body>
 </html>

@@ -216,7 +216,28 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     font-size: 32px;
     font-weight: 800;
     letter-spacing: -.02em;
-    margin: 22px 0 0;
+    /* bottom margin opens the band the ghosted surname sits in */
+    margin: 22px 0 14px;
+}
+/* Korean surname ghosted directly under "Brown" so the pair reads as one
+   name with two forms. Anchored to the surname span rather than the whole
+   name, which keeps it centred on "Brown" instead of on "Trey Brown".
+   Decorative pseudo-element content, so screen readers don't announce it as
+   part of the name, and absolutely positioned so it adds no layout height. */
+.photo-card-surname { position: relative; }
+.photo-card-surname::after {
+    content: "Hwang";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    margin-top: -12px;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    color: rgba(10, 10, 10, .22);
+    white-space: nowrap;
+    pointer-events: none;
 }
 .photo-card-tag {
     font-size: 15px;
@@ -235,6 +256,17 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 /* =========================================================================
    Hero
    ========================================================================= */
+/* Hangul eyebrow above the title. Noto Sans KR only — Inter would silently
+   fall through to an inconsistent system Korean face. */
+.hero-greeting {
+    font-family: "Noto Sans KR", var(--font-sans);
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: .01em;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
 .hero-sub {
     font-size: 17px;
     color: var(--ink-muted);
@@ -242,25 +274,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     margin: -20px 0 0;
 }
 
-.stats { display: flex; gap: 48px; flex-wrap: wrap; margin: 52px 0 46px; }
-.stat-num {
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: clamp(38px, 4.2vw, 56px);
-    line-height: 1;
-    letter-spacing: -.04em;
-}
-.stat-lbl {
-    font-size: 13px;
-    letter-spacing: .04em;
-    text-transform: uppercase;
-    color: var(--ink-subtle);
-    margin-top: 12px;
-    line-height: 1.35;
-}
-
 /* Two color-block tiles, icon top-left and label + arrow along the bottom */
-.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+/* margin-top replaces the spacing the old stats row used to contribute */
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 52px; }
 .tile {
     position: relative;
     min-height: 232px;
@@ -345,6 +361,27 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
    Tools — 2-col grid, monogram tile + name + descriptor
    ========================================================================= */
 .tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 34px 40px; }
+/* Category label spans the full grid; a rule to its right carries the eye
+   across so the group reads as a band, not a stray heading. */
+.tool-cat {
+    grid-column: 1 / -1;
+    display: flex; align-items: center; gap: 18px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-subtle);
+}
+.tool-cat::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+/* Groups after the first need extra air above; the grid gap alone reads
+   as too tight against the preceding row of tools. */
+.tool-cat:not(:first-child) { margin-top: 18px; }
 .tool { display: flex; align-items: center; gap: 18px; }
 .tool-mark {
     flex: none;
@@ -437,7 +474,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     .card-sticky { position: static; width: 100%; max-width: 344px; margin: 0 auto; }
     .scroll-col { gap: 92px; }
     .big-title { margin-bottom: 36px; }
-    .stats { gap: 32px; margin: 42px 0 38px; }
+    .tiles { margin-top: 42px; }
     .exp-row { flex-direction: column; gap: 12px; }
 }
 @media (max-width: 620px) {
@@ -448,5 +485,4 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     .form-row { grid-template-columns: 1fr; }
     .proj-row { grid-template-columns: 96px 1fr auto; gap: 18px; }
     .proj-thumb { width: 96px; height: 104px; }
-    .stat { min-width: 40%; }
 }
