@@ -147,6 +147,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     margin-bottom: 44px;
 }
 .big-title .ghost { color: var(--ink-ghost); display: block; }
+/* Modifier for headings carrying a full sentence per line instead of one
+   word — same treatment, smaller so long phrases don't wrap or overflow */
+.big-title.big-title--sm { font-size: clamp(22px, 3vw, 38px); letter-spacing: -.01em; }
 
 /* =========================================================================
    Two-column shell — card sticky left for the full page length
@@ -176,47 +179,38 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 }
 .photo-card-img-wrap { position: relative; }
 
-/* availability pill, sitting on top of the photo */
-.status-pill {
+/* Two soft accent shapes peeking from behind the photo's corners —
+   purely decorative, sits behind the image via negative z-index. */
+.photo-card-img-wrap::before,
+.photo-card-img-wrap::after {
+    content: "";
     position: absolute;
-    top: 12px;
-    left: 12px;
-    z-index: 2;
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    background: rgba(14, 14, 14, .72);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    color: #fff;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: .01em;
-    padding: 6px 12px 6px 10px;
-    border-radius: var(--radius-pill);
+    z-index: -1;
 }
-.status-pill i {
-    width: 7px;
-    height: 7px;
+.photo-card-img-wrap::before {
+    top: -12px;
+    left: -12px;
+    width: 48px;
+    height: 48px;
+    background: var(--accent-2);
+    border-radius: 12px;
+    transform: rotate(-14deg);
+}
+.photo-card-img-wrap::after {
+    bottom: -14px;
+    right: -14px;
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
     border-radius: 50%;
-    background: #4ADE80;
-    box-shadow: 0 0 0 0 rgba(74, 222, 128, .7);
-    animation: status-ping 2.4s var(--ease-out) infinite;
-}
-@keyframes status-ping {
-    0%   { box-shadow: 0 0 0 0 rgba(74, 222, 128, .7); }
-    70%  { box-shadow: 0 0 0 7px rgba(74, 222, 128, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
-}
-@media (prefers-reduced-motion: reduce) {
-    .status-pill i { animation: none; }
 }
 .photo-card-img {
     width: 100%;
-    height: 280px;
+    height: 290px;
     object-fit: cover;
-    object-position: top center;
+    object-position: 10% center;
     border-radius: 18px;
+    position: relative;
 }
 .photo-card-name {
     font-size: 32px;
@@ -224,18 +218,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     letter-spacing: -.02em;
     margin: 22px 0 0;
 }
-.photo-card-badge {
-    width: 34px;
-    height: 34px;
-    margin: 14px auto 0;
-    border-radius: 50%;
-    background: var(--accent);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.photo-card-badge svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; }
 .photo-card-tag {
     font-size: 15px;
     color: var(--card-ink-muted);
