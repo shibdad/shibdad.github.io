@@ -1,6 +1,6 @@
 /* =========================================================================
    Trey Brown — portfolio
-   Two-column layout modeled on sawad.framer.website: a white photo card
+   Two-column layout: a white photo card
    sticky on the left for the whole page, every section stacked in the
    right column, each headed by a two-tone oversized title.
    ========================================================================= */
@@ -208,7 +208,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     width: 100%;
     height: 290px;
     object-fit: cover;
-    object-position: 10% center;
+    object-position: 0% 30%;
     border-radius: 18px;
     position: relative;
 }
@@ -219,11 +219,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
     /* bottom margin opens the band the ghosted surname sits in */
     margin: 22px 0 14px;
 }
-/* Korean surname ghosted directly under "Brown" so the pair reads as one
-   name with two forms. Anchored to the surname span rather than the whole
-   name, which keeps it centred on "Brown" instead of on "Trey Brown".
-   Decorative pseudo-element content, so screen readers don't announce it as
-   part of the name, and absolutely positioned so it adds no layout height. */
 .photo-card-surname { position: relative; }
 .photo-card-surname::after {
     content: "Hwang";
