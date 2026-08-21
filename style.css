@@ -251,8 +251,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 /* =========================================================================
    Hero
    ========================================================================= */
-/* Hangul eyebrow above the title. Noto Sans KR only — Inter would silently
-   fall through to an inconsistent system Korean face. */
 .hero-greeting {
     font-family: "Noto Sans KR", var(--font-sans);
     font-weight: 500;
